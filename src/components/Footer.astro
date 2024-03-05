@@ -25,25 +25,25 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-family: Arial, Helvetica, sans-serif;
-        border-top: 1px solid rgb(225, 222, 222);
+        font-family: var(--root-font-family);
+        border-top: 1px solid var(--seperator-border-color);
         margin-top: auto;
         padding-top: 18px;
     }
     .copy-right-part {
-        width: 80%;
+        width: var(--width-for-computer);
     }
     .logo-address-part {
-        width: 80%;
+        width: var(--width-for-computer);
         justify-content: flex-start;
     }
 	img {
-        width: 50px;
+        width: var(--logo-width);
     }
     .address {
         padding-top: 12px;
         padding-bottom: 28px;
-        font-size: 12px;
+        font-size: var(--font-size-s);
     }
     .address p {
         margin: 0;
@@ -57,7 +57,7 @@
         color: black;
     }
     .copy-right {
-        font-size: 10px;
+        font-size: var(--font-size-xs);
         margin: 0;
         padding-bottom: 8px;
     }
