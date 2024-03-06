@@ -1,17 +1,15 @@
 ---
-
+import Logo from "./Logo.astro";
 ---
 
 <section>
     <div class="logo-address-part">
-        <div>
-            <img src="./public/images/logo-air-conditioner.png">
-        </div>
-        <div class="address">
+        <Logo></Logo>
+        <address>
             <p><span>Address:</span> ul. Pyskowicka 24, 41-807 Zabrze</p>
             <p><span>Tel:</span> <a href="tel:+64323737930">32 37 37 930</a></p>
             <p><span>E-mail:</span> <a href="mailto:asfvdsngfm@gmail.com">asfvdsngfm@gmail.com</a></p>
-        </div>
+        </address>
     </div>
     <div class="copy-right-part">
         <p class="copy-right"><span>Copyright © 2024 Sinclair.pl.</span> Materiały na stronie Sinclair.pl 
@@ -31,19 +29,16 @@
         padding-top: 18px;
     }
     .copy-right-part {
-        width: var(--width-for-computer);
+        width: var(--width-for-desktop);
     }
     .logo-address-part {
-        width: var(--width-for-computer);
+        width: var(--width-for-desktop);
         justify-content: flex-start;
     }
-	img {
-        width: var(--logo-width);
-    }
-    .address {
-        padding-top: 12px;
+    address {
         padding-bottom: 28px;
         font-size: var(--font-size-s);
+        font-style: normal;
     }
     .address p {
         margin: 0;
