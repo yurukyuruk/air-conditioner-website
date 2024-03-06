@@ -1,0 +1,59 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<section>
+    <div class="logo-address-part">
+        <Logo></Logo>
+        <address>
+            <p><span>Address:</span> ul. Pyskowicka 24, 41-807 Zabrze</p>
+            <p><span>Tel:</span> <a href="tel:+64323737930">32 37 37 930</a></p>
+            <p><span>E-mail:</span> <a href="mailto:asfvdsngfm@gmail.com">asfvdsngfm@gmail.com</a></p>
+        </address>
+    </div>
+    <div class="copy-right-part">
+        <p class="copy-right"><span>Copyright © 2024 Sinclair.pl.</span> Materiały na stronie Sinclair.pl 
+        są chronione prawami autorskimi. Kopiowanie, publikowanie, umieszczanie w internecie, 
+        przywłaszczanie, modyfikowanie materiałów jest zabronione. Zdjęcia niektórych produktów 
+        mogą się różnić. Dołożono wszelk</p>
+    </div>
+</section>
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: var(--root-font-family);
+        border-top: 1px solid var(--seperator-border-color);
+        margin-top: auto;
+        padding-top: 18px;
+    }
+    .copy-right-part {
+        width: var(--width-for-desktop);
+    }
+    .logo-address-part {
+        width: var(--width-for-desktop);
+        justify-content: flex-start;
+    }
+    address {
+        padding-bottom: 28px;
+        font-size: var(--font-size-s);
+        font-style: normal;
+    }
+    .address p {
+        margin: 0;
+        padding-bottom: 4px;
+    }
+    span {
+        font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .copy-right {
+        font-size: var(--font-size-xs);
+        margin: 0;
+        padding-bottom: 8px;
+    }
+</style>
