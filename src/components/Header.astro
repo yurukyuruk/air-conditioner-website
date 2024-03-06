@@ -1,0 +1,114 @@
+
+<script>
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", function() {
+    let currentScroll = window.scrollY || document.documentElement.scrollTop;
+    if (currentScroll > lastScrollTop) {
+        // Scroll down
+        document.getElementById("header").classList.add("header-hidden");
+    } else {
+        // Scroll up
+        document.getElementById("header").classList.remove("header-hidden");
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+}, false);
+
+document.addEventListener("DOMContentLoaded", function() {
+    let currentPage = window.location.pathname; // Get current page filename
+    // Get all subpage links
+    let links = document.querySelectorAll("nav ul li a");
+    // Loop through links
+    links.forEach(function(link) {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active"); // Add active class to current page link
+        }
+    });
+});
+</script>
+
+<section id="header">
+    <div class="header-content">
+        <a class="logo-part" href="/">
+            <img src="../../public/images/logo-air-conditioner.png">
+            <h2><span class="m-letter">M</span><span class="s-letter">S</span> INSTALBUD</h2>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="/o-nas">O nas</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+                <li><a href="/realizacje">Realizacje</a></li>
+                <li><a href="/serwis">Serwis</a></li>
+                <li><a href="/certifikaty">Certifikaty</a></li>
+                <li><a href="/klimatyzacje">Klimatyzacje</a></li>
+                <li><a href="/wentylacja">Wentylacja</a></li>
+                <li><a href="/pompy-ciepla">Pompy Ciepła</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+<style>
+    section {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        transition: top 0.3s;
+        width: var(--full-width);
+    }
+    .header-hidden {
+        top: -74px; 
+    }
+    .header-content {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        width: var(--width-for-computer);
+        font-family: var(--root-font-family);
+    }
+    .logo-part {
+        display: flex;
+        align-items: center;
+    }
+    img {
+        width: var(--logo-width);
+    }
+    h2 {
+        font-weight: var(--light-font-weight);
+        margin: 0;
+        align-self: end;
+        margin-bottom: -1px;
+        color: var(--main-blue-color);
+        padding-left: 6px;
+    }
+    .m-letter {
+        color: var(--main-blue-color);
+    }
+    .s-letter {
+        color: var(--main-red-color);
+    }
+    ul, nav {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    li {
+        list-style-type: none;
+    }
+    a {
+        font-size: var(--font-size-s);
+        padding-left: 36px;
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--main-text-color);
+    }
+    a:hover {
+        color: var(--main-red-color);
+    }
+    .active {
+        color: var(--main-red-color);
+        font-weight: bold;
+    }
+</style>
