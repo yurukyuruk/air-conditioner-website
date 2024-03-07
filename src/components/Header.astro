@@ -1,4 +1,6 @@
-
+---
+import Logo from "./Logo.astro";
+---
 <script>
 let lastScrollTop = 0;
 
@@ -30,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <section id="header">
     <div class="header-content">
         <a class="logo-part" href="/">
-            <img src="../../public/images/logo-air-conditioner.png">
+            <Logo></Logo>
             <h2><span class="m-letter">M</span><span class="s-letter">S</span> INSTALBUD</h2>
         </a>
         <nav>
@@ -48,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
 </section>
 <style>
-    section {
+    #header {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         display: flex;
         justify-content: center;
@@ -65,15 +67,13 @@ document.addEventListener("DOMContentLoaded", function() {
         padding-bottom: 10px;
         display: flex;
         justify-content: space-between;
-        width: var(--width-for-computer);
+        width: var(--width-for-desktop);
         font-family: var(--root-font-family);
     }
     .logo-part {
         display: flex;
         align-items: center;
-    }
-    img {
-        width: var(--logo-width);
+        padding-left: 0;
     }
     h2 {
         font-weight: var(--light-font-weight);
