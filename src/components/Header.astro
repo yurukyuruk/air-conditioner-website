@@ -3,7 +3,6 @@ import Logo from "./Logo.astro";
 ---
 <script>
 let lastScrollTop = 0;
-
 window.addEventListener("scroll", function() {
     let currentScroll = window.scrollY || document.documentElement.scrollTop;
     if (currentScroll > lastScrollTop) {
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-
+<section class="header-and-hamburger-navigation">
 <section id="header">
     <div class="header-content">
         <a class="logo-part" href="/">
@@ -49,7 +48,13 @@ document.addEventListener("DOMContentLoaded", function() {
         </nav>
     </div>
 </section>
+</section>
+
 <style>
+    .header-and-hamburger-navigation {
+        display: flex;
+        flex-direction: column;
+    }
     #header {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         display: flex;
@@ -57,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
         position: fixed;
         top: 0;
         transition: top 0.3s;
-        width: var(--full-width);
+        width: 100%;
     }
     .header-hidden {
         top: -74px; 
@@ -67,19 +72,19 @@ document.addEventListener("DOMContentLoaded", function() {
         padding-bottom: 10px;
         display: flex;
         justify-content: space-between;
-        width: var(--width-for-desktop);
+        width: var(--width-for-mobile);
         font-family: var(--root-font-family);
     }
     .logo-part {
         display: flex;
         align-items: center;
         padding-left: 0;
+        justify-content: ;
     }
     h2 {
         font-weight: var(--light-font-weight);
         margin: 0;
         align-self: end;
-        margin-bottom: -1px;
         color: var(--main-blue-color);
         padding-left: 6px;
     }
@@ -110,5 +115,30 @@ document.addEventListener("DOMContentLoaded", function() {
     .active {
         color: var(--main-red-color);
         font-weight: bold;
+    }
+    .hamburger-menu-icon img, x-icon img{
+        width: 30px;
+        height: 30px;
+    }
+    .hamburger-menu-icon, .x-icon {
+        border: none;
+        background-color: white;
+        padding: 4px 0 0 0;
+    }
+    .hide {
+        display: none;
+    }
+    @media (max-width: 1155px) {
+        nav {
+            display: none;
+        }
+    }
+    @media (min-width: 1155px) {
+        .hamburger-menu-icon, .x-icon {
+            display: none;
+        }
+        .header-content {
+            width: var(--width-for-desktop);
+        }
     }
 </style>
