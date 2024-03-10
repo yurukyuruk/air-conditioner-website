@@ -63,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
         top: -74px; 
     }
     .header-content {
-        padding-top: 10px;
-        padding-bottom: 10px;
         display: flex;
         justify-content: space-between;
         width: var(--width-for-desktop);
@@ -78,8 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     h2 {
         font-weight: var(--light-font-weight);
-        margin: 0;
-        align-self: end;
         color: var(--main-blue-color);
         padding-left: 6px;
     }
@@ -94,12 +90,17 @@ document.addEventListener("DOMContentLoaded", function() {
         align-items: center;
         margin: 0;
     }
+    ul {
+        padding: 0;
+    }
     li {
+        display: flex;
         list-style-type: none;
+        align-content: center;
     }
     a {
-        font-size: var(--font-size-m);
-        padding-left: 36px;
+        font-size: var(--font-size-s);
+        padding-left: 32px;
         cursor: pointer;
         text-decoration: none;
         color: var(--main-text-color);
@@ -112,7 +113,12 @@ document.addEventListener("DOMContentLoaded", function() {
         font-weight: bold;
     }
 
-    @media (max-width: 1155px) {
+    @media (max-width: 1024px) {
+        .header-content {
+        width: var(--width-for-mobile);
+        }
+    }
+    @media (max-width: 768px) {
         .header {
             display: none;
         }
