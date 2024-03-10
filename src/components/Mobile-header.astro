@@ -68,6 +68,7 @@ import Logo from "./Logo.astro";
 
 <style>
     .header {
+        font-size: var(--font-size-m);
         display: flex;
         flex-direction: column;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -175,11 +176,12 @@ import Logo from "./Logo.astro";
         opacity: 0;
     }
     nav {
+        font-size: var(--font-size-l);
         position: fixed;
-        top: 60px;
+        top: 48px;
         transition: top 0.1s;
         z-index: 1;
-        height: calc(100% - 60px); /*60px is where nav starts from the top*/
+        height: calc(100% - 48px); /*60px is where nav starts from the top*/
         background-color: var(--main-background-color);
         width: 100%;
     }
@@ -202,7 +204,7 @@ import Logo from "./Logo.astro";
     .active {
         color: black;
     }
-    @media (min-width: 1155px) {
+    @media (min-width: 768px) {
         .header {
             display: none;
         }
