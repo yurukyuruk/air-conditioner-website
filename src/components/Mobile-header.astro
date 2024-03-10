@@ -176,7 +176,7 @@ import Logo from "./Logo.astro";
         opacity: 0;
     }
     nav {
-        font-size: var(--font-size-l);
+        font-size: var(--font-size-m);
         position: fixed;
         top: 48px;
         transition: top 0.1s;
@@ -207,6 +207,9 @@ import Logo from "./Logo.astro";
     @media (min-width: 768px) {
         .header {
             display: none;
+        }
+        nav {
+            font-size: var(--font-size-s);
         }
     }
 </style>
