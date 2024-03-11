@@ -72,12 +72,12 @@ document.addEventListener("DOMContentLoaded", function() {
         display: flex;
         align-items: center;
         padding-left: 0;
-        justify-content: ;
     }
     h2 {
         font-weight: var(--light-font-weight);
         color: var(--main-blue-color);
         padding-left: 6px;
+        font-weight: bold;
     }
     .m-letter {
         color: var(--main-blue-color);
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     a {
         font-size: var(--font-size-s);
-        padding-left: 32px;
+        padding-left: 24px;
         cursor: pointer;
         text-decoration: none;
         color: var(--main-text-color);
@@ -116,6 +116,11 @@ document.addEventListener("DOMContentLoaded", function() {
     @media (max-width: 1024px) {
         .header-content {
         width: var(--width-for-mobile);
+        }
+    }
+    @media (max-width: 910px) {
+        a {
+            padding-left: 12px;
         }
     }
     @media (max-width: 768px) {

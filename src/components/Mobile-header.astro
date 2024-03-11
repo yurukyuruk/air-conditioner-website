@@ -3,7 +3,7 @@ import Logo from "./Logo.astro";
 ---
 
 <script>
-    const hamburgerButton = document.querySelector(".hamburger-icon");
+    const hamburgerButton = document.querySelector(".hamburger-checkbox");
     const navigation = document.querySelector(".navigation");
     hamburgerButton.addEventListener("click", () => {;
         navigation.classList.toggle("hidden");
@@ -44,7 +44,7 @@ import Logo from "./Logo.astro";
             <h2><span class="m-letter">M</span><span class="s-letter">S</span> INSTALBUD</h2>
         </a>
         <label>
-            <input type="checkbox" name="">
+            <input type="checkbox" name="" class="hamburger-checkbox">
             <div class="bar hamburger-icon">
                 <span class="top"></span>
                 <span class="middle"></span>
@@ -121,11 +121,21 @@ import Logo from "./Logo.astro";
     a:active, a:hover {
         color: black;
     }
+    label {
+        position: relative;
+    }
     input[type="checkbox"] {
-        display: none;
+        position: absolute;
+        z-index: 1;
+        width: 30px;
+        height: 30px;
+        top: -16px;
+        left: -34px;
+        cursor: pointer;
+        opacity: 0;
     }
     .bar {
-        position: relative;
+        position: absolute;
         cursor: pointer;
         display: flex;
         justify-content: center;    
@@ -178,10 +188,10 @@ import Logo from "./Logo.astro";
     nav {
         font-size: var(--font-size-m);
         position: fixed;
-        top: 48px;
+        top: 52px;
         transition: top 0.1s;
         z-index: 1;
-        height: calc(100% - 48px); /*60px is where nav starts from the top*/
+        height: calc(100% - 52px); /*52px is where nav starts from the top*/
         background-color: var(--main-background-color);
         width: 100%;
     }
