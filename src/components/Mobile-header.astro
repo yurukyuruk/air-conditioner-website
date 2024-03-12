@@ -5,36 +5,9 @@ import Logo from "./Logo.astro";
 <script>
     const hamburgerButton = document.querySelector(".hamburger-checkbox");
     const navigation = document.querySelector(".navigation");
-    hamburgerButton.addEventListener("click", () => {;
+    hamburgerButton.addEventListener("click", () => {
         navigation.classList.toggle("hidden");
     })
-
-    let lastScrollTop = 0;
-    window.addEventListener("scroll", function() {
-        const currentScroll = window.scrollY || document.documentElement.scrollTop;
-        if (currentScroll > lastScrollTop) {
-            // Scroll down
-            document.querySelector(".header").classList.add("header-hidden");
-            document.querySelector(".navigation").classList.add("scroll-hidden");
-        } else {
-            // Scroll up
-            document.querySelector(".header").classList.remove("header-hidden");
-            document.querySelector(".navigation").classList.remove("scroll-hidden");
-        }
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-    }, false);
-
-    document.addEventListener("DOMContentLoaded", function() {
-    const currentPage = window.location.pathname; // Get current page pathname
-    // Get all subpage links
-    const links = document.querySelectorAll("nav ul li a");
-    // Loop through links
-    links.forEach(function(link) {
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active"); // Add active class to current page link
-        }
-    });
-});
 </script>
 
 <section class="header">
@@ -99,11 +72,12 @@ import Logo from "./Logo.astro";
         padding-left: 0;
     }
     h2 {
-        font-weight: var(--light-font-weight);
+        font-weight: bold;
         margin: 0;
         align-self: end;
         color: var(--main-blue-color);
         padding-left: 6px;
+
     }
     .m-letter {
         color: var(--main-blue-color);
