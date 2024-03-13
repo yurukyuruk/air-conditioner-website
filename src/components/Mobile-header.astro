@@ -5,9 +5,15 @@ import Logo from "./Logo.astro";
 <script>
     const hamburgerButton = document.querySelector(".hamburger-checkbox");
     const navigation = document.querySelector(".navigation");
-    hamburgerButton.addEventListener("click", () => {
-        navigation.classList.toggle("hidden");
+    if(hamburgerButton) {
+        hamburgerButton.addEventListener("click", () => {
+            if(navigation) {
+                navigation.classList.toggle("hidden");
+            }
     })
+    }
+    
+    
 </script>
 
 <section class="header">

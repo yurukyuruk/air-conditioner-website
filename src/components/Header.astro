@@ -4,7 +4,7 @@ import DesktopHeader from "./Desktop-header.astro";
 ---
 <script>
     let lastScrollTop = 0;
-    const header = document.querySelectorAll(".header")
+    let header = document.querySelectorAll(".header")
     window.addEventListener("scroll", function() {
         if(header === null) {
             header = document.querySelectorAll(".header")
@@ -20,10 +20,10 @@ import DesktopHeader from "./Desktop-header.astro";
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
     }, false);
 
+    // Get all subpage links
+    const links = document.querySelectorAll(".header nav ul li a");
     document.addEventListener("DOMContentLoaded", function() {
         const currentPage = window.location.pathname; // Get current page pathname
-        // Get all subpage links
-        const links = document.querySelectorAll(".header nav ul li a");
         // Loop through links
         links.forEach(function(link) {
             if (link.getAttribute("href") === currentPage) {
