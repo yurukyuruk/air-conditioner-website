@@ -2,37 +2,13 @@
 import Logo from "./Logo.astro";
 ---
 <script>
-let lastScrollTop = 0;
-window.addEventListener("scroll", function() {
-    const currentScroll = window.scrollY || document.documentElement.scrollTop;
-    if (currentScroll > lastScrollTop) {
-        // Scroll down
-        document.querySelector(".header").classList.add("header-hidden");
-    } else {
-        // Scroll up
-        document.querySelector(".header").classList.remove("header-hidden");
-    }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-}, false);
-
-document.addEventListener("DOMContentLoaded", function() {
-    const currentPage = window.location.pathname; // Get current page pathname
-    // Get all subpage links
-    const links = document.querySelectorAll("nav ul li a");
-    // Loop through links
-    links.forEach(function(link) {
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active"); // Add active class to current page link
-        }
-    });
-});
 </script>
 
 <section class="header">
     <div class="header-content">
         <a class="logo-part" href="/">
             <Logo></Logo>
-            <h2><span class="m-letter">M</span><span class="s-letter">S</span> INSTALBUD</h2>
+            <h2 id="logo-header"><span class="m-letter">M</span><span class="s-letter">S</span> INSTALBUD</h2>
         </a>
         <nav>
             <ul>
@@ -67,17 +43,20 @@ document.addEventListener("DOMContentLoaded", function() {
         justify-content: space-between;
         width: var(--width-for-desktop);
         font-family: var(--root-font-family);
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     .logo-part {
         display: flex;
         align-items: center;
         padding-left: 0;
-        justify-content: ;
     }
-    h2 {
-        font-weight: var(--light-font-weight);
+    #logo-header {
+        font-size: var(--font-size-xl);
         color: var(--main-blue-color);
         padding-left: 6px;
+        font-weight: bold;
+        margin: 0;
     }
     .m-letter {
         color: var(--main-blue-color);
@@ -100,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     a {
         font-size: var(--font-size-s);
-        padding-left: 32px;
+        padding-left: 20px;
         cursor: pointer;
         text-decoration: none;
         color: var(--main-text-color);
@@ -116,6 +95,11 @@ document.addEventListener("DOMContentLoaded", function() {
     @media (max-width: 1024px) {
         .header-content {
         width: var(--width-for-mobile);
+        }
+    }
+    @media (max-width: 910px) {
+        a {
+            padding-left: 10px;
         }
     }
     @media (max-width: 768px) {

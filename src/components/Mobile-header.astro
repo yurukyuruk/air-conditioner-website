@@ -1,0 +1,205 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<script>
+    const hamburgerButton = document.querySelector(".hamburger-checkbox");
+    const navigation = document.querySelector(".navigation");
+    if(hamburgerButton) {
+        hamburgerButton.addEventListener("click", () => {
+            if(navigation) {
+                navigation.classList.toggle("hidden");
+            }
+    })
+    }
+    
+    
+</script>
+
+<section class="header">
+    <div class="header-content">
+        <a class="logo-part" href="/">
+            <Logo></Logo>
+            <h2><span class="m-letter">M</span><span class="s-letter">S</span> INSTALBUD</h2>
+        </a>
+        <label>
+            <input type="checkbox" name="" class="hamburger-checkbox">
+            <div class="bar hamburger-icon">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </label>
+    </div>
+    <nav class="navigation hidden">
+        <ul>
+            <li><a href="/o-nas">O nas</a></li>
+            <li><a href="/kontakt">Kontakt</a></li>
+            <li><a href="/realizacje">Realizacje</a></li>
+            <li><a href="/serwis">Serwis</a></li>
+            <li><a href="/certifikaty">Certifikaty</a></li>
+            <li><a href="/klimatyzacje">Klimatyzacje</a></li>
+            <li><a href="/wentylacja">Wentylacja</a></li>
+            <li><a href="/pompy-ciepla">Pompy Ciepła</a></li>
+        </ul>
+    </nav>
+</section>
+
+<style>
+    .header {
+        font-size: var(--font-size-m);
+        display: flex;
+        flex-direction: column;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        transition: top 0.3s;
+        width: 100%;
+    }
+    .header-hidden {
+        top: -74px; 
+    }
+    .scroll-hidden {
+        display: none;
+    }
+    .header-content {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: var(--width-for-mobile);
+        font-family: var(--root-font-family);
+    }
+    .logo-part {
+        display: flex;
+        align-items: center;
+        padding-left: 0;
+    }
+    h2 {
+        font-weight: bold;
+        margin: 0;
+        align-self: end;
+        color: var(--main-blue-color);
+        padding-left: 6px;
+
+    }
+    .m-letter {
+        color: var(--main-blue-color);
+    }
+    .s-letter {
+        color: var(--main-red-color);
+    }
+    a {
+        text-decoration: none;
+        font-family: var(--root-font-family);
+        color: var(--main-blue-color);
+        cursor: pointer;
+        width: var(--width-for-mobile);
+    }
+    a:active, a:hover {
+        color: black;
+    }
+    label {
+        position: relative;
+    }
+    input[type="checkbox"] {
+        position: absolute;
+        z-index: 1;
+        width: 30px;
+        height: 30px;
+        top: -16px;
+        left: -34px;
+        cursor: pointer;
+        opacity: 0;
+    }
+    .bar {
+        position: absolute;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;    
+    }
+    .bar .middle {
+        height: 3px;
+        width: 30px;
+        background-color: var(--main-red-color);
+        border-radius: 50px;
+        position: absolute;
+        right: 0;
+        transition: 0.3s ease;
+    }
+    .bar .top {
+        bottom: 7px;
+        height: 3px;
+        width: 30px;
+        background-color: var(--main-red-color);
+        border-radius: 50px;
+        position: absolute;
+        right: 0;
+        transition: 0.3s ease;
+    }
+    .bar .bottom {
+        top: 10px;
+        height: 3px;
+        width: 30px;
+        background-color: var(--main-red-color);
+        border-radius: 50px;
+        position: absolute;
+        right: 0;
+        transition: 0.3s ease;
+    }
+    input[type="checkbox"]:checked ~ .bar .top {
+        transform: rotate(-45deg);
+        width: 35px;
+        transform-origin: middle;
+        top: -2px
+    }
+    input[type="checkbox"]:checked ~ .bar .bottom {
+        transform: rotate(45deg);
+        width: 35px;
+        transform-origin: middle;
+        top: -2px
+    }
+    input[type="checkbox"]:checked ~ .bar .middle {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    nav {
+        font-size: var(--font-size-m);
+        position: fixed;
+        top: 52px;
+        transition: top 0.1s;
+        z-index: 1;
+        height: calc(100% - 52px); /*52px is where nav starts from the top*/
+        background-color: var(--main-background-color);
+        width: 100%;
+    }
+    .hidden {
+        display: none;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    li:hover, li:active {
+        background-color: var(--light-gray-color);
+    }
+    .active {
+        color: black;
+    }
+    @media (min-width: 768px) {
+        .header {
+            display: none;
+        }
+        nav {
+            font-size: var(--font-size-s);
+        }
+    }
+</style>
