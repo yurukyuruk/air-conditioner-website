@@ -1,0 +1,116 @@
+---
+---
+<section class="main-wrapper">
+    <section class="realization-and-certificates">
+        <section class="realization">
+            <div class="wrapper">
+                <img src="../../public/images/realization-icon.png"></img>
+                <div class="description">
+                    <h2>Najwyższa Jakość Usług</h2>
+                    <p>Dysponujemy wysokiejAwasgdbgmvbn rdf 
+                        asfvs dhcn bm fjmhkj  sdxbaszvdsxcsdxc 
+                        sdhncvb xcn. 
+                    </p>
+                </div>
+            </div>
+            <a href="./realizacje">Zobacz nasze usługi</a>
+        </section>
+        <section class="certificates">
+            <div class="wrapper">
+                <img src="../../public/images/certificates-icon.png"></img>
+                <div class="description">
+                    <h2>Profesjonalna Obsługa</h2>
+                    <p>Dysponujemy wysokiej jakościdxcdxhgf
+                        ccccasortymentem, Awasgdbgmvbn rdf 
+                        asfvs dhcn.   
+                    </p>
+                </div>
+            </div>
+            <a href="./certifikaty">Zobacz certyfikaty</a>
+        </section>
+    </section>
+</section>
+
+<style>
+    .main-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+    }
+    .realization-and-certificates {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .realization, .certificates {
+        width: var(--width-for-mobile);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: var(--root-font-family);
+    }
+    .certificates {
+        margin-top: 60px;
+    }
+    .wrapper {
+        display: flex;
+    }
+    .description {
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+    }
+    h2 {
+        margin: 0;
+        color: var(--main-blue-color);
+        font-size: var(--font-size-xl);
+    }
+    p {
+        font-size: var(--font-size-m);
+        margin: 0;
+        padding: 10px 0 16px 0;
+    }
+    a {
+        color: var(--black-text-color);
+        background-color: var(--main-background-color);
+        text-decoration: none;
+        font-size: var(--font-size-l);
+        width: 220px;
+        border: 2px var(--main-blue-color) solid;
+        padding: 10px 0 10px 0;
+        margin-bottom: 20px;text-align: center;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.438) 0px 2px 8px;
+        transition: transform 0.5s ease-in-out;
+        align-self: flex-end;
+        margin: 0;
+    }
+    a:hover, a:active {
+        transform: scale(1.1);
+        background-color: var(--main-blue-color);
+    }
+    img {
+        width: 150px;
+        height: 150px;
+    }
+    @media (max-width: 380px) {
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    } 
+    @media (min-width: 1024px) {
+        .realization-and-certificates {
+            width: var(--width-for-desktop);
+            flex-wrap: nowrap;
+        }
+        .realization {
+            padding-right: 20px;
+        }
+        .certificates {
+            padding-left: 20px;
+            margin-top: 0;
+        }
+    }
+</style>

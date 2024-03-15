@@ -56,6 +56,8 @@ import Logo from "./Logo.astro";
         top: 0;
         transition: top 0.3s;
         width: 100%;
+        background-color: var(--main-background-color);
+        z-index: 1;
     }
     .header-hidden {
         top: -74px; 
@@ -96,7 +98,6 @@ import Logo from "./Logo.astro";
         font-family: var(--root-font-family);
         color: var(--main-blue-color);
         cursor: pointer;
-        width: var(--width-for-mobile);
     }
     a:active, a:hover {
         color: black;
@@ -168,10 +169,10 @@ import Logo from "./Logo.astro";
     nav {
         font-size: var(--font-size-m);
         position: fixed;
-        top: 52px;
+        top: 48px;
         transition: top 0.1s;
         z-index: 1;
-        height: calc(100% - 52px); /*52px is where nav starts from the top*/
+        height: calc(100% - 48px); /*47px is where nav starts from the top*/
         background-color: var(--main-background-color);
         width: 100%;
     }
@@ -190,6 +191,9 @@ import Logo from "./Logo.astro";
     }
     li:hover, li:active {
         background-color: var(--light-gray-color);
+    }
+    nav ul li a {
+        width: var(--width-for-mobile);
     }
     .active {
         color: black;
