@@ -1,0 +1,73 @@
+---
+---
+
+<section>
+    <img src="../../public/images/main-image.jpg" alt="Air conditioner image">
+    <div class="wrapper">
+        <div class="main-info">
+            <p>Witamy w [Nazwa Firmy] – liderze w dziedzinie klimatyzacji, pomp ciepła i wentylacji.
+                 Naszym celem jest dostarczanie innowacyjnych i ekologicznych rozwiązań, zapewniając 
+                 klientom komfort i efektywność energetyczną.
+            </p>
+            <a href="./kontakt" class="contact">Skontaktuj się z nami</a>
+        </div>
+    </div>
+    
+</section>
+
+<style>
+    section {
+        font-family: var(--root-font-family);
+        width: 100%;
+        margin-top: 48px;
+    }
+    img {
+        width: 100%;
+        margin-bottom: -4px;
+    }
+    .wrapper {
+        background-color: var(--main-blue-color);
+    }
+    .main-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    p {
+        padding: 40px 2% 40px 2%;
+        color: var(--white-text-color);
+        font-size: var(--font-size-l);
+        margin: 0;
+    }
+    .contact {
+        color: var(--black-text-color);
+        background-color: var(--main-background-color);
+        text-decoration: none;
+        font-size: var(--font-size-l);
+        width: 220px;
+        padding: 10px 0 10px 0;
+        margin-bottom: 20px;text-align: center;
+        border-radius: 20px;
+        box-shadow: rgb(0, 14, 22) 0px 2px 6px;
+        transition: transform 0.5s ease-in-out;
+    }
+    .contact:hover, .contact:active {
+        transform: scale(1.1);
+    }
+    @media (min-width: 1024px) {
+        .wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        .main-info {
+            flex-direction: row;
+            align-items: center;
+            width: var(--width-for-desktop);
+        }
+        .contact {
+            flex-shrink: 0;
+            margin-bottom: 0;
+            margin-left: 40px;
+        }
+    }
+</style>
