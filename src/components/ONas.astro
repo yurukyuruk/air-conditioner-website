@@ -1,0 +1,62 @@
+---
+---
+
+<section>
+    <div>
+        <h1>O Nas</h1>
+    </div>
+    <img src="../../public/images/company.jpg" alt="Budynek firmy">
+    <p class="p-1">Aasfdkk svfdbf  svdsvdvvd safvdf sdvfdv edsgvf esdgv wsavfd sxvf
+        sgdvf esdv  sdb  esdngmj bfdbg dsb sdbfrgr rhth ngnfdnn fdb v. 
+        wsab edsbgnghfn sdhbv esdhbf esddgf wgs rfbggnh  dfbngn gnh esdb rfn dhbg   
+        gnbt.
+    </p>
+    <p class="p-2">
+        Sgdvf esdv  sdb  esdngmj bfdbg dsb sdbfrgr rhth ngnfdnn fdb v. wsab 
+        edsbgnghfn sdhbv esdhbf esddgf wgs rfbggnh  dfbngn gnh esdb rfn dhbg gnbt.
+    </p>
+</section>
+
+<style>
+    section {
+        font-family: var(--root-font-family);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 48px;
+    }
+    div {
+        width: 100%;
+        background-color: var(--main-blue-color);
+        display: flex;
+        justify-content: center;
+        
+    }
+    h1 {
+        color: var(--white-text-color);
+        padding: 30px 0 30px 0;
+        margin: 0;
+        font-size: var(--font-size-xl);
+        width: var(--width-for-mobile);
+    }
+    img {
+        width: 100%;
+    }
+    p {
+        width: var(--width-for-mobile);
+        font-size: var(--font-size-m);
+        margin: 0;
+    }
+    .p-1 {
+        padding: 40px 0 18px 0;
+    }
+    .p-2 {
+        padding: 0 0 40px 0;
+    }
+
+@media (min-width: 1024px) {
+    img, p, h1{
+        width: var(--width-for-desktop);
+    }
+}
+</style>
