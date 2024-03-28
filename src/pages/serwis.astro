@@ -2,13 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
+import Service from "../components/Service.astro";
 ---
 
 <Layout title="Serwis">
 	<Header></Header>
+	<ul>
+		{
+			 allPosts.map((post, index) => (
+        		<Service key={index} title={post.data.title} price={post.data.price} description={post.data.description}/>
+    		))
+		  }
+	</ul>
 	<Footer></Footer>
 </Layout>
 
 <style>
-	
+	ul {
+		padding: 0;
+	}
 </style>

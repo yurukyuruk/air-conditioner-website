@@ -9,7 +9,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "lib": ["ESNext", "DOM"],
-    "allowJs": false,
+    "allowJs": true,
     "checkJs": false,
     "sourceMap": true,
     "outDir": "./dist",
