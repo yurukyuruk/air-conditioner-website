@@ -4,10 +4,6 @@ const postsCollection = defineCollection({
     schema: z.object({
       title: z.string(),
       description: z.string(),
-      price:  z.string()
+      price:  z.number()
     })
 });
-
-export const collections = {
-  posts: postsCollection,
-};

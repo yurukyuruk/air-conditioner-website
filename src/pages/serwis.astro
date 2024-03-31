@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { getCollection } from "astro:content";
-const allPosts = await getCollection("posts");
+const allServices = await getCollection("services");
 import Service from "../components/Service.astro";
 ---
 
@@ -14,8 +14,8 @@ import Service from "../components/Service.astro";
     </div>
 	<ul>
 		{
-			 allPosts.map((post, index) => (
-        		<Service key={index} title={post.data.title} price={post.data.price} description={post.data.description}/>
+			 allServices.map((service, index) => (
+        		<Service key={index} title={service.data.title} price={service.data.price} description={service.data.description}/>
     		))
 		  }
 	</ul>
