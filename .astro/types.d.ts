@@ -125,7 +125,65 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"services": {
+		"air-conditioners": {
+"air-conditioner1.md": {
+	id: "air-conditioner1.md";
+  slug: "air-conditioner1";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner2.md": {
+	id: "air-conditioner2.md";
+  slug: "air-conditioner2";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner3.md": {
+	id: "air-conditioner3.md";
+  slug: "air-conditioner3";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner4.md": {
+	id: "air-conditioner4.md";
+  slug: "air-conditioner4";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner5.md": {
+	id: "air-conditioner5.md";
+  slug: "air-conditioner5";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner6.md": {
+	id: "air-conditioner6.md";
+  slug: "air-conditioner6";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner7.md": {
+	id: "air-conditioner7.md";
+  slug: "air-conditioner7";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner8.md": {
+	id: "air-conditioner8.md";
+  slug: "air-conditioner8";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+};
+"services": {
 "service1.md": {
 	id: "service1.md";
   slug: "service1";

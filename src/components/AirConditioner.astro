@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+const { modelName, energy, sound, airConditionerPrice, klimaImage, energyImage } = Astro.props
+---
+
+<Layout title="AirConditioner">
+    <section>
+        <div>
+            <img src = {klimaImage} alt = "klimatyzacja" class="air-conditionew-photo"></img>
+            <img src = {energyImage} alt = "klasa energetyczna" class="energy-photo"></img>
+        </div>
+        <h2>{modelName}</h2>
+        <ul>
+            <li>Pobór energii :  {energy} Btu/h</li>
+            <li>Hałas:  {sound} dBA</li>
+        </ul>
+        <h3>Już od: {airConditionerPrice} PLN</h3>
+    </section>
+</Layout>
+
+<style>
+    section {
+        font-family: var(--root-font-family);
+        padding: 20px;
+        background-color: var(--very-light-gray-color);
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+    .air-conditionew-photo {
+        width: 300px;
+    }
+    .energy-photo {
+        width: 60px;
+    }
+    ul, h2, h3 {
+        margin: 0;
+        padding: 0;
+        padding-top: 20px;
+    }
+    h2, h3 {
+        font-size: var(--font-size-l);
+    }
+    li {
+        font-size: var(--font-size-m);
+        list-style-position: inside;
+        list-style-type: disc;
+    }
+</style>
