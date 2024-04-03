@@ -1,0 +1,4 @@
+---
+brandName: LG
+expanded: false
+---

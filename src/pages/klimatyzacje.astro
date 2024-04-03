@@ -2,9 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import GrouppedAirConditioners from '../components/GrouppedAirConditioners.astro';
 import { getCollection } from "astro:content";
-const allAirConditioners = await getCollection("air-conditioners");
-import AirConditioner from "../components/AirConditioner.astro";
+const allAirConditionerBrands = await getCollection("air-conditioner-brands");
 ---
 
 <Layout title="Klimatyzacje">
@@ -14,14 +14,12 @@ import AirConditioner from "../components/AirConditioner.astro";
     </div>
 	<section>
 		<ul>
-			{
-				 allAirConditioners.map((airConditioner, index) => (
-					<AirConditioner key={index} modelName={airConditioner.data.modelName} energy={airConditioner.data.energy} sound={airConditioner.data.sound}
-					airConditionerPrice={airConditioner.data.airConditionerPrice} klimaImage={airConditioner.data.klimaImage} energyImage={airConditioner.data.energyImage}
-					/>
-				))
-			  }
-		</ul>
+            {
+                 allAirConditionerBrands.map((allAirConditionerBrand, index) => (
+                    <GrouppedAirConditioners key={index} brandName={allAirConditionerBrand.data.brandName} expanded={allAirConditionerBrand.data.expanded}/>
+                ))
+              }
+        </ul>
 	</section>
 	<Footer></Footer>
 </Layout>
@@ -49,10 +47,8 @@ import AirConditioner from "../components/AirConditioner.astro";
 	}
 	ul {
 		width: var(--width-for-mobile);
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(auto, 340px));
-		gap: 20px;
-		justify-content: center;
+		display: flex;
+		flex-direction: column;
 		padding: 0;
 	}
 	@media (min-width: 1024px) {

@@ -1,0 +1,92 @@
+---
+import { getCollection } from "astro:content";
+const allAirConditioners = await getCollection("air-conditioners");
+import AirConditioner from "../components/AirConditioner.astro";
+import Layout from '../layouts/Layout.astro';
+const { brandName, expanded } = Astro.props
+---
+
+<Layout title="AirConditionerGroup">
+    <details open= {expanded}>
+        <summary>{brandName}</summary>
+        <ul>
+            {allAirConditioners.map((airConditioner, index) => {
+                if (airConditioner.data.brand === brandName) {
+                    return (
+                        <AirConditioner
+                            key={index}
+                            modelName={airConditioner.data.modelName}
+                            energy={airConditioner.data.energy}
+                            sound={airConditioner.data.sound}
+                            airConditionerPrice={airConditioner.data.airConditionerPrice}
+                            klimaImage={airConditioner.data.klimaImage}
+                            energyImage={airConditioner.data.energyImage}
+                            brand={airConditioner.data.brand}
+                        />
+                    );
+                }
+            })}
+        </ul>
+        <div>
+            <a href="https://www.google.com/?hl=tr" target="_blank">Zobacz więcej</a>
+        </div>
+    </details>
+</Layout>
+
+
+<style>
+    details {
+        font-family: var(--root-font-family);
+    }
+    summary {
+        font-size: var(--font-size-m);
+        padding-bottom: 10px;
+        cursor: pointer;
+    }
+    ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(auto, 340px));
+		gap: 20px;
+		justify-content: center;
+		padding: 0;
+	}
+    details ul {
+        opacity: 0;
+    }
+
+    details[open] ul {
+        animation: fadeIn .75s linear forwards;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    div {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0 60px 0;
+    } 
+    a {
+        color: var(--black-text-color);
+        background-color: var(--main-background-color);
+        text-decoration: none;
+        font-size: var(--font-size-l);
+        border: 2px var(--main-blue-color) solid;
+        padding: 10px 0 10px 0;
+        width: 220px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.438) 0px 2px 8px;
+        transition: transform 0.5s ease-in-out;
+        margin: 0;
+    }
+    a:hover, a:active {
+        transform: scale(1.1);
+        background-color: var(--main-blue-color);
+    }
+</style>

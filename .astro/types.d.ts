@@ -125,10 +125,96 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"air-conditioners": {
+		"air-conditioner-brands": {
+"brand1.md": {
+	id: "brand1.md";
+  slug: "brand1";
+  body: string;
+  collection: "air-conditioner-brands";
+  data: InferEntrySchema<"air-conditioner-brands">
+} & { render(): Render[".md"] };
+"brand2.md": {
+	id: "brand2.md";
+  slug: "brand2";
+  body: string;
+  collection: "air-conditioner-brands";
+  data: InferEntrySchema<"air-conditioner-brands">
+} & { render(): Render[".md"] };
+"brand3.md": {
+	id: "brand3.md";
+  slug: "brand3";
+  body: string;
+  collection: "air-conditioner-brands";
+  data: InferEntrySchema<"air-conditioner-brands">
+} & { render(): Render[".md"] };
+};
+"air-conditioners": {
 "air-conditioner1.md": {
 	id: "air-conditioner1.md";
   slug: "air-conditioner1";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner10.md": {
+	id: "air-conditioner10.md";
+  slug: "air-conditioner10";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner11.md": {
+	id: "air-conditioner11.md";
+  slug: "air-conditioner11";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner12.md": {
+	id: "air-conditioner12.md";
+  slug: "air-conditioner12";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner13.md": {
+	id: "air-conditioner13.md";
+  slug: "air-conditioner13";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner14.md": {
+	id: "air-conditioner14.md";
+  slug: "air-conditioner14";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner15.md": {
+	id: "air-conditioner15.md";
+  slug: "air-conditioner15";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner16.md": {
+	id: "air-conditioner16.md";
+  slug: "air-conditioner16";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner17.md": {
+	id: "air-conditioner17.md";
+  slug: "air-conditioner17";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+"air-conditioner18.md": {
+	id: "air-conditioner18.md";
+  slug: "air-conditioner18";
   body: string;
   collection: "air-conditioners";
   data: InferEntrySchema<"air-conditioners">
@@ -182,6 +268,15 @@ declare module 'astro:content' {
   collection: "air-conditioners";
   data: InferEntrySchema<"air-conditioners">
 } & { render(): Render[".md"] };
+"air-conditioner9.md": {
+	id: "air-conditioner9.md";
+  slug: "air-conditioner9";
+  body: string;
+  collection: "air-conditioners";
+  data: InferEntrySchema<"air-conditioners">
+} & { render(): Render[".md"] };
+};
+"air-conditioners-brand": {
 };
 "services": {
 "service1.md": {
