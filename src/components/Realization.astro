@@ -1,19 +1,97 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const { realizationImage, realizationText, realizationCost} = Astro.props
+const { realizationImage, realizationText, realizationCost } = Astro.props;
 ---
 
 <Layout title="Realization">
     <section>
-        <div>
-            <img src={realizationImage} alt="Zdjęcie klimatyzatora lub istotne">
-        </div>
+        <div class="slider-container">
+            <div class="slider">
+                <img src={realizationImage[0]} alt="Zdjęcie klimatyzatora lub istotne">
+                <img src={realizationImage[1]} alt="Zdjęcie klimatyzatora lub istotne">
+                <img src={realizationImage[2]} alt="Zdjęcie klimatyzatora lub istotne">
+            </div>
+            <button class="prev">&lt;</button>
+            <button class="next">&gt;</button>
+        </div>  
         <p>{realizationText}</p>
         <h3>Koszt: {realizationCost} PLN</h3>
     </section>
+    <script>
+        function setupSlider(slider) {
+            const prevButton = slider.querySelector('.prev');
+            const nextButton = slider.querySelector('.next');
+            let currentIndex = 0;
+            slider.querySelector('.prev').disabled = currentIndex === 0;
+    
+            prevButton.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateSlider(slider, currentIndex);
+                }
+            });
+    
+            nextButton.addEventListener('click', function() {
+                if (currentIndex < 2) {
+                    currentIndex++;
+                    updateSlider(slider, currentIndex);
+                }
+            });
+        }
+    
+        function updateSlider(slider, currentIndex) {
+            const offset = -currentIndex * 100; // Assuming each image takes up 100% width
+            slider.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+            slider.querySelector('.prev').disabled = currentIndex === 0;
+            slider.querySelector('.next').disabled = currentIndex === 2;
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            const sliders = document.querySelectorAll('.slider-container');
+            sliders.forEach(setupSlider);
+        });
+    </script>
 </Layout>
 
+
+
+
 <style>
+    .slider-container {
+      position: relative; /* Adjust width as needed */
+      overflow: hidden;
+      width: 340px;
+      margin: -20px -20px 0 -20px;
+    }
+    .slider {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+    .slider img {
+      width: 100%;
+      height: auto;
+    }
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 8px 16px;
+      border: none;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      cursor: pointer;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    button:first-child {
+      left: 0;
+    }
+    button:last-child {
+      right: 0;
+    }
+
     section {
         font-family: var(--root-font-family);
         padding: 20px;
@@ -22,10 +100,6 @@ const { realizationImage, realizationText, realizationCost} = Astro.props
         box-shadow: rgba(129, 129, 129, 0.438) 0px 2px 8px;
         display: flex;
         flex-direction: column;
-    }
-    img {
-        width: 340px;
-        margin: -20px 0 0 -20px;
     }
     h3, p {
         margin: 0;

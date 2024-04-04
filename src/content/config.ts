@@ -10,7 +10,7 @@ const servicesCollection = defineCollection({
 
 const realizationCollection = defineCollection({
   schema: z.object({
-    realizationImage: z.string(),
+    realizationImage: z.array(z.string()),
     realizationText: z.string(),
     realizationCost: z.number()
   })
