@@ -2,13 +2,66 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import { getCollection } from "astro:content";
+const allRealizations = await getCollection("realization");
+import Realization from "../components/Realization.astro";
 ---
 
 <Layout title="Realizacje">
-	<Header></Header>
-	<Footer></Footer>
+	<Header/>
+	<div>
+        <h1>Realizacje</h1>
+    </div>
+	<section>
+		<ul>
+			{
+				 allRealizations.map((realization, index) => (
+					<Realization key={index} realizationImage={realization.data.realizationImage} realizationText={realization.data.realizationText} realizationCost={realization.data.realizationCost}/>
+				))
+			  }
+		</ul>
+	</section>
+	<Footer/>
 </Layout>
 
 <style>
-	
+
+div {
+        width: 100%;
+        background-color: var(--main-blue-color);
+        display: flex;
+        justify-content: center;
+        margin-top: 48px;
+    }
+    h1 {
+        color: var(--white-text-color);
+        padding: 30px 0 30px 0;
+        margin: 0;
+        font-size: var(--font-size-xl);
+        width: var(--width-for-mobile);
+		font-family: var(--root-font-family);
+    }
+	section {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	ul {
+		font-family: var(--root-font-family);
+		width: var(--width-for-mobile);
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(auto, 340px));
+		gap: 20px;
+		justify-content: center;
+		padding: 0;
+		margin: 20px 0 20px 0;
+	}
+	@media (min-width: 1024px) {
+		ul {
+			width: var(--width-for-desktop);
+		}
+		h1 {
+        width: var(--width-for-desktop);
+    	}
+	}
 </style>

@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+const { realizationImage, realizationText, realizationCost} = Astro.props
+---
+
+<Layout title="Realization">
+    <section>
+        <div>
+            <img src={realizationImage} alt="Zdjęcie klimatyzatora lub istotne">
+        </div>
+        <p>{realizationText}</p>
+        <h3>Koszt: {realizationCost} PLN</h3>
+    </section>
+</Layout>
+
+<style>
+    section {
+        font-family: var(--root-font-family);
+        padding: 20px;
+        width: 300px;
+        background-color: var(--very-light-gray-color);
+        box-shadow: rgba(129, 129, 129, 0.438) 0px 2px 8px;
+        display: flex;
+        flex-direction: column;
+    }
+    img {
+        width: 340px;
+        margin: -20px 0 0 -20px;
+    }
+    h3, p {
+        margin: 0;
+        font-size: var(--font-size-m);
+    }
+    p {
+        padding: 20px 0 20px 0;
+    }
+    h3 {
+        margin-top: auto;
+    }
+</style>
