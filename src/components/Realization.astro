@@ -11,8 +11,8 @@ const { realizationImage, realizationText, realizationCost } = Astro.props;
                 <img src={realizationImage[1]} alt="Zdjęcie klimatyzatora lub istotne">
                 <img src={realizationImage[2]} alt="Zdjęcie klimatyzatora lub istotne">
             </div>
-            <button class="prev">&lt;</button>
-            <button class="next">&gt;</button>
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
         </div>  
         <p>{realizationText}</p>
         <h3>Koszt: {realizationCost} PLN</h3>
@@ -76,10 +76,18 @@ const { realizationImage, realizationText, realizationCost } = Astro.props;
       top: 50%;
       transform: translateY(-50%);
       padding: 8px 16px;
-      border: none;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.61);
+      color: white;;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.178);
+        font-size: var(--font-size-l);
       cursor: pointer;
+    }
+    .prev {
+        margin-left: 10px;
+    }
+    .next {
+        margin-right: 10px;
     }
     button:disabled {
       opacity: 0.5;
