@@ -16,7 +16,8 @@ const airConditionerCollection = defineCollection({
     airConditionerPrice: z.number(),
     klimaImage: z.string(),
     energyClass: z.string(),
-    brand: z.string()
+    brand: z.string(),
+    linkToWebsite: z.string()
   })
 });
 

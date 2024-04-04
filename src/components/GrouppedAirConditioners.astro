@@ -8,7 +8,10 @@ const { brandName, expanded } = Astro.props
 
 <Layout title="AirConditionerGroup">
     <details open= {expanded}>
-        <summary>{brandName}</summary>
+        <summary>
+            <span class="brand-name">{brandName}</span>
+            <span class="bottom-line"></span>
+        </summary>
         <ul>
             {allAirConditioners.map((airConditioner, index) => {
                 if (airConditioner.data.brand === brandName) {
@@ -20,8 +23,9 @@ const { brandName, expanded } = Astro.props
                             sound={airConditioner.data.sound}
                             airConditionerPrice={airConditioner.data.airConditionerPrice}
                             klimaImage={airConditioner.data.klimaImage}
-                            energyImage={airConditioner.data.energyImage}
+                            energyClass={airConditioner.data.energyClass}
                             brand={airConditioner.data.brand}
+                            linkToWebsite={airConditioner.data.linkToWebsite}
                         />
                     );
                 }
@@ -37,11 +41,36 @@ const { brandName, expanded } = Astro.props
 <style>
     details {
         font-family: var(--root-font-family);
+        margin-top: 20px;
     }
     summary {
-        font-size: var(--font-size-m);
-        padding-bottom: 10px;
+        font-size: var(--font-size-l);
+        font-weight: bold;
         cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding-bottom: 18px;
+    }
+    summary::after {
+        content: '';
+        width: 0; 
+        height: 0; 
+        border-top: 10px solid var(--main-blue-color);
+        border-inline: 7px solid transparent;
+        transition: 0.2s;
+    }
+    .brand-name {
+        background-color: var(--white-background-color);
+        padding-right: 4px;
+        color: var(--main-blue-color);
+    }
+    .bottom-line {
+        width: 100%;
+        border-bottom: 2px solid black;
+        position: absolute;
+        top: 16px;
+        z-index: -1;
     }
     ul {
 		display: grid;

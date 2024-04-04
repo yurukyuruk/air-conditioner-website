@@ -6,4 +6,5 @@ airConditionerPrice: 2250
 klimaImage: /images/klima2.png
 energyClass: A++
 brand: LG
+linkToWebsite: https://translate.google.com/
 ---

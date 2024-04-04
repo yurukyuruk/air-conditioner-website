@@ -6,4 +6,5 @@ airConditionerPrice: 2060
 klimaImage: /images/klima2.png
 energyClass: A+
 brand: Sinclair
+linkToWebsite: https://translate.google.com/
 ---

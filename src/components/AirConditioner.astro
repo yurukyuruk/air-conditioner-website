@@ -1,23 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const { modelName, energy, sound, airConditionerPrice, klimaImage, energyClass } = Astro.props
+const { modelName, energy, sound, airConditionerPrice, klimaImage, energyClass, linkToWebsite } = Astro.props
 ---
 
 <Layout title="AirConditioner">
     <section>
-        <div class="image-and-energy-class">
-            <img src = {klimaImage} alt = "klimatyzacja" class="air-conditionew-photo"></img>
-            <div class="energy-class">
-                <p>{energyClass}A+</p>
-                <div class="arrow"></div>
+        <a href={linkToWebsite} target="_blank">
+            <div class="image-and-energy-class">
+                <img src = {klimaImage} alt = "klimatyzacja" class="air-conditionew-photo"></img>
+                <div class="energy-class">
+                    <p>{energyClass}</p>
+                    <div class="arrow"></div>
+                </div>
             </div>
-        </div>
-        <h2>{modelName}</h2>
-        <ul>
-            <li>Pobór energii :  {energy} Btu/h</li>
-            <li>Głośność:  {sound} dBA</li>
-        </ul>
-        <h3>Już od: {airConditionerPrice} PLN</h3>
+            <h2>{modelName}</h2>
+            <ul>
+                <li>Pobór energii :  {energy} Btu/h</li>
+                <li>Głośność:  {sound} dBA</li>
+            </ul>
+            <h3>Już od: {airConditionerPrice} PLN</h3>
+        </a>
     </section>
 </Layout>
 
@@ -27,6 +29,14 @@ const { modelName, energy, sound, airConditionerPrice, klimaImage, energyClass }
         padding: 20px;
         background-color: var(--very-light-gray-color);
         box-shadow: rgba(129, 129, 129, 0.438) 0px 2px 8px;
+        transition: transform 0.3s ease-in-out;
+    }
+    section:hover, section:active {
+        transform: scale(1.05);
+    }
+    a {
+        text-decoration: none;
+        color: var(--black-text-color);
     }
     .image-and-energy-class {
         display: flex;

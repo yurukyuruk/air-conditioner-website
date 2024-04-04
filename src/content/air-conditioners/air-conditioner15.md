@@ -6,4 +6,5 @@ airConditionerPrice: 2280
 klimaImage: /images/klima1.png
 energyClass: A+
 brand: Samsung
+linkToWebsite: https://translate.google.com/
 ---
