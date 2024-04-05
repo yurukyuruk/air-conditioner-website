@@ -1,15 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const { realizationImage, realizationText, realizationCost } = Astro.props;
+const { realizationImages, realizationText, realizationCost } = Astro.props;
 ---
 
 <Layout title="Realization">
     <section>
         <div class="slider-container">
             <div class="slider">
-                <img src={realizationImage[0]} alt="Zdjęcie klimatyzatora lub istotne">
-                <img src={realizationImage[1]} alt="Zdjęcie klimatyzatora lub istotne">
-                <img src={realizationImage[2]} alt="Zdjęcie klimatyzatora lub istotne">
+                <img src={realizationImages[0]} alt="Zdjęcie klimatyzatora lub istotne">
+                <img src={realizationImages[1]} alt="Zdjęcie klimatyzatora lub istotne">
+                <img src={realizationImages[2]} alt="Zdjęcie klimatyzatora lub istotne">
             </div>
             <button class="prev">❮</button>
             <button class="next">❯</button>
@@ -76,18 +76,11 @@ const { realizationImage, realizationText, realizationCost } = Astro.props;
       top: 50%;
       transform: translateY(-50%);
       padding: 8px 16px;
-      border: 2px solid rgba(255, 255, 255, 0.61);
-      color: white;;
-      border-radius: 50%;
-      background-color: rgba(0, 0, 0, 0.178);
-        font-size: var(--font-size-l);
+      border: 2px solid rgba(255, 255, 255, 0);
+      color: rgba(0, 0, 0, 0.582);
+      background-color: rgba(255, 255, 255, 0.411);
+      font-size: var(--font-size-l);
       cursor: pointer;
-    }
-    .prev {
-        margin-left: 10px;
-    }
-    .next {
-        margin-right: 10px;
     }
     button:disabled {
       opacity: 0.5;
