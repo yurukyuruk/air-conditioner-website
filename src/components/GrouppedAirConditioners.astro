@@ -54,11 +54,16 @@ const { brandName, expanded } = Astro.props
     }
     summary::after {
         content: '';
-        width: 0; 
-        height: 0; 
-        border-top: 10px solid var(--main-blue-color);
-        border-inline: 7px solid transparent;
-        transition: 0.2s;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent; /* Rotate border-left to border-top */
+        border-right: 10px solid var(--main-blue-color); /* Keep border-right */
+        border-bottom: 10px solid transparent; /* Rotate border-bottom to border-bottom */
+        transition: 0.5s;
+        margin-top: -6px;
+    }
+    details[open] summary::after {
+        transform: rotate(-90deg); /* Rotate the triangle */
     }
     .brand-name {
         background-color: var(--white-background-color);
