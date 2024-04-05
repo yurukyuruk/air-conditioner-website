@@ -1,10 +1,9 @@
 ---
+import SubPageHeader from '../components/SubPageHeader.astro';
 ---
 
 <section>
-    <div>
-        <h1>O Nas</h1>
-    </div>
+    <SubPageHeader subPageName="O Nas"/>
     <img src="/images/company.jpg" alt="Budynek firmy">
     <p class="p-1">Aasfdkk svfdbf  svdsvdvvd safvdf sdvfdv edsgvf esdgv wsavfd sxvf
         sgdvf esdv  sdb  esdngmj bfdbg dsb sdbfrgr rhth ngnfdnn fdb v. 
@@ -23,21 +22,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 48px;
-    }
-    div {
-        width: 100%;
-        background-color: var(--main-blue-color);
-        display: flex;
-        justify-content: center;
-        
-    }
-    h1 {
-        color: var(--white-text-color);
-        padding: 30px 0 30px 0;
-        margin: 0;
-        font-size: var(--font-size-xl);
-        width: var(--width-for-mobile);
     }
     img {
         width: 100%;
@@ -55,7 +39,7 @@
     }
 
 @media (min-width: 1024px) {
-    img, p, h1{
+    img, p{
         width: var(--width-for-desktop);
     }
 }
