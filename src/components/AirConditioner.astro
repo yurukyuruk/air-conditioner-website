@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+const { modelName, energy, sound, airConditionerPrice, klimaImage, energyClass, linkToWebsite } = Astro.props
+---
+
+<Layout title="AirConditioner">
+    <section>
+        <a href={linkToWebsite} target="_blank">
+            <div class="image-and-energy-class">
+                <img src = {klimaImage} alt = "klimatyzacja" class="air-conditionew-photo"></img>
+                <div class="energy-class">
+                    <p>{energyClass}</p>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <h2>{modelName}</h2>
+            <ul>
+                <li>Pobór energii :  {energy} Btu/h</li>
+                <li>Głośność:  {sound} dBA</li>
+            </ul>
+            <h3>Już od: {airConditionerPrice} PLN</h3>
+        </a>
+    </section>
+</Layout>
+
+<style>
+    section {
+        font-family: var(--root-font-family);
+        padding: 20px;
+        background-color: var(--very-light-gray-color);
+        box-shadow: rgba(129, 129, 129, 0.438) 0px 2px 8px;
+        transition: transform 0.3s ease-in-out;
+    }
+    section:hover, section:active {
+        transform: scale(1.05);
+    }
+    a {
+        text-decoration: none;
+        color: var(--black-text-color);
+    }
+    .image-and-energy-class {
+        display: flex;
+        flex-direction: column;
+    }
+    .air-conditionew-photo {
+        width: 300px;
+        height: 140px;
+    }
+    .energy-class {
+        display: flex;
+        margin-top: 10px;
+    }
+    .energy-class p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        width: 40px;
+        height: 24px;
+        background-color: var(--main-blue-color);
+        color: var(--white-text-color);
+        font-size: var(--font-size-m);
+    }
+    .arrow {
+        width: 0;  
+        height: 0;  
+        border-top: 12px solid transparent; 
+        border-bottom: 12px solid transparent; 
+        border-left: 12px solid var(--main-blue-color); 
+    }
+    ul, h2, h3 {
+        margin: 0;
+        padding: 0;
+        padding-top: 20px;
+    }
+    h2, h3 {
+        font-size: var(--font-size-l);
+    }
+    li {
+        font-size: var(--font-size-m);
+        list-style-position: inside;
+        list-style-type: disc;
+    }
+</style>
