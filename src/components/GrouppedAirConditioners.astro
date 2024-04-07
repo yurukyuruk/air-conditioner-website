@@ -1,0 +1,126 @@
+---
+import { getCollection } from "astro:content";
+const allAirConditioners = await getCollection("air-conditioners");
+import AirConditioner from "../components/AirConditioner.astro";
+import Layout from '../layouts/Layout.astro';
+const { brandName, expanded } = Astro.props
+---
+
+<Layout title="AirConditionerGroup">
+    <details open= {expanded}>
+        <summary>
+            <span class="brand-name">{brandName}</span>
+            <span class="bottom-line"></span>
+        </summary>
+        <ul>
+            {allAirConditioners.map((airConditioner, index) => {
+                if (airConditioner.data.brand === brandName) {
+                    return (
+                        <AirConditioner
+                            key={index}
+                            modelName={airConditioner.data.modelName}
+                            energy={airConditioner.data.energy}
+                            sound={airConditioner.data.sound}
+                            airConditionerPrice={airConditioner.data.airConditionerPrice}
+                            klimaImage={airConditioner.data.klimaImage}
+                            energyClass={airConditioner.data.energyClass}
+                            brand={airConditioner.data.brand}
+                            linkToWebsite={airConditioner.data.linkToWebsite}
+                        />
+                    );
+                }
+            })}
+        </ul>
+        <div>
+            <a href="https://www.google.com/?hl=tr" target="_blank">Zobacz więcej</a>
+        </div>
+    </details>
+</Layout>
+
+
+<style>
+    details {
+        font-family: var(--root-font-family);
+        margin-top: 20px;
+    }
+    summary {
+        font-size: var(--font-size-l);
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding-bottom: 18px;
+    }
+    summary::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent; /* Rotate border-left to border-top */
+        border-right: 10px solid var(--main-blue-color); /* Keep border-right */
+        border-bottom: 10px solid transparent; /* Rotate border-bottom to border-bottom */
+        transition: 0.5s;
+        margin-top: -6px;
+    }
+    details[open] summary::after {
+        transform: rotate(-90deg); /* Rotate the triangle */
+    }
+    .brand-name {
+        background-color: var(--white-background-color);
+        padding-right: 4px;
+        color: var(--main-blue-color);
+    }
+    .bottom-line {
+        width: 100%;
+        border-bottom: 2px solid black;
+        position: absolute;
+        top: 16px;
+        z-index: -1;
+    }
+    ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(auto, 340px));
+		gap: 20px;
+		justify-content: center;
+		padding: 0;
+	}
+    details ul {
+        opacity: 0;
+    }
+
+    details[open] ul {
+        animation: fadeIn .75s linear forwards;
+    }
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    div {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0 60px 0;
+    } 
+    a {
+        color: var(--black-text-color);
+        background-color: var(--main-background-color);
+        text-decoration: none;
+        font-size: var(--font-size-l);
+        border: 2px var(--main-blue-color) solid;
+        padding: 10px 0 10px 0;
+        width: 220px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.438) 0px 2px 8px;
+        transition: transform 0.5s ease-in-out;
+        margin: 0;
+    }
+    a:hover, a:active {
+        transform: scale(1.1);
+        background-color: var(--main-blue-color);
+    }
+</style>

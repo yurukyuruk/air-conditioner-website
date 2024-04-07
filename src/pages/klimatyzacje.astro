@@ -2,13 +2,58 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import GrouppedAirConditioners from '../components/GrouppedAirConditioners.astro';
+import { getCollection } from "astro:content";
+const allAirConditionerBrands = await getCollection("air-conditioner-brands");
 ---
 
 <Layout title="Klimatyzacje">
 	<Header></Header>
+	<div>
+        <h1>Klimatyzacje</h1>
+    </div>
+	<section>
+		<ul>
+            {
+                 allAirConditionerBrands.map((allAirConditionerBrand, index) => (
+                    <GrouppedAirConditioners key={index} brandName={allAirConditionerBrand.data.brandName} expanded={allAirConditionerBrand.data.expanded}/>
+                ))
+              }
+        </ul>
+	</section>
 	<Footer></Footer>
 </Layout>
 
 <style>
-	
+	div {
+        width: 100%;
+        background-color: var(--main-blue-color);
+        display: flex;
+        justify-content: center;
+        margin-top: 48px;
+    }
+    h1 {
+        color: var(--white-text-color);
+        padding: 30px 0 30px 0;
+        margin: 0;
+        font-size: var(--font-size-xl);
+        width: var(--width-for-mobile);
+		font-family: var(--root-font-family);
+    }
+	section {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+	ul {
+		width: var(--width-for-mobile);
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+	}
+	@media (min-width: 1024px) {
+    	h1, ul {
+        	width: var(--width-for-desktop);
+    	}
+	}
 </style>
