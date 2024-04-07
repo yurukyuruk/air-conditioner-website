@@ -73,8 +73,7 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
     }
     button {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      bottom: 10px;
       padding: 8px 16px;
       border: 2px solid rgba(255, 255, 255, 0);
       color: rgba(0, 0, 0, 0.582);
@@ -86,13 +85,12 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
       opacity: 0.5;
       cursor: not-allowed;
     }
-    button:first-child {
-      left: 0;
+    .prev {
+        left: calc(50% - 46px);
     }
-    button:last-child {
-      right: 0;
+    .next {
+        right: calc(50% - 46px);
     }
-
     section {
         font-family: var(--root-font-family);
         padding: 20px;
