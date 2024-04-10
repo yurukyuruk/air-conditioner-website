@@ -18,19 +18,17 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
         <h3>Koszt: {realizationCost} PLN</h3>
     </section>
     <script>
-        function setupSlider(slider) {
-            const prevButton = slider.querySelector('.prev');
-            const nextButton = slider.querySelector('.next');
-            let currentIndex = 0;
-            slider.querySelector('.prev').disabled = currentIndex === 0;
-    
+        function setupSlider(slider: Element) {
+            const prevButton = slider.querySelector<HTMLButtonElement>('.prev')!;
+            const nextButton = slider.querySelector<HTMLButtonElement>('.next')!;
+            let currentIndex = 0;   
+            prevButton.disabled = currentIndex === 0;
             prevButton.addEventListener('click', function() {
                 if (currentIndex > 0) {
                     currentIndex--;
                     updateSlider(slider, currentIndex);
                 }
             });
-    
             nextButton.addEventListener('click', function() {
                 if (currentIndex < 2) {
                     currentIndex++;
@@ -39,13 +37,19 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
             });
         }
     
-        function updateSlider(slider, currentIndex) {
-            const offset = -currentIndex * 100; // Assuming each image takes up 100% width
-            slider.querySelector('.slider').style.transform = `translateX(${offset}%)`;
-            slider.querySelector('.prev').disabled = currentIndex === 0;
-            slider.querySelector('.next').disabled = currentIndex === 2;
+        function updateSlider(slider: Element, currentIndex: number) {
+            const offset = -currentIndex * 100;
+            const sliderElement = slider.querySelector<HTMLElement>('.slider');
+            if (sliderElement) {
+                sliderElement.style.transform = `translateX(${offset}%)`;
+            }
+            const prevButton = slider.querySelector<HTMLButtonElement>('.prev');
+            const nextButton = slider.querySelector<HTMLButtonElement>('.next');
+            if (prevButton && nextButton) {
+                prevButton.disabled = currentIndex === 0;
+                nextButton.disabled = currentIndex === 2;
+            }
         }
-    
         document.addEventListener('DOMContentLoaded', function() {
             const sliders = document.querySelectorAll('.slider-container');
             sliders.forEach(setupSlider);
@@ -77,9 +81,13 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
       padding: 8px 16px;
       border: 2px solid rgba(255, 255, 255, 0);
       color: rgba(0, 0, 0, 0.582);
-      background-color: rgba(255, 255, 255, 0.411);
+      background-color: rgba(255, 255, 255, 0.511);
       font-size: var(--font-size-l);
       cursor: pointer;
+    }
+    button:not(:disabled):hover, button:not(:disabled):active {
+        color: rgba(0, 0, 0, 0.721); 
+        background-color: rgba(255, 255, 255, 0.671);
     }
     button:disabled {
       opacity: 0.5;

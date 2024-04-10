@@ -276,8 +276,7 @@ declare module 'astro:content' {
   data: InferEntrySchema<"air-conditioners">
 } & { render(): Render[".md"] };
 };
-"services": {
-		"realization": {
+"realization": {
 "realization1.md": {
 	id: "realization1.md";
   slug: "realization1";
