@@ -2,34 +2,49 @@
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import SubPageHeader from '../components/SubPageHeader.astro';
+import Certificate from '../components/Certificate.astro';
+import { getCollection } from "astro:content";
+const allCertificates = await getCollection("certificates");
 ---
 
 <Layout title="Certifikaty">
 	<Header/>
-	<div>
-        <h1>Certifikaty</h1>
-    </div>
+	<SubPageHeader subPageName="Certifikaty"/>
+    <section>
+        <ul>
+            {
+                allCertificates.map((certificate, index) => (
+                    <Certificate 
+                        key={index} 
+                        certificateBrand={certificate.data.certificateBrand} 
+                        certificateText={certificate.data.certificateText} 
+                        certificateImageURL={certificate.data.certificateImageURL}
+                    />
+                ))
+            }
+        </ul>
+    </section>
 	<Footer/>
 </Layout>
 
 <style>
-	div {
-        width: 100%;
-        background-color: var(--main-blue-color);
+    section {
         display: flex;
         justify-content: center;
-        margin-top: 48px;
     }
-    h1 {
-        color: var(--white-text-color);
-        padding: 30px 0 30px 0;
-        margin: 0;
-        font-size: var(--font-size-xl);
-        width: var(--width-for-mobile);
+    ul {
 		font-family: var(--root-font-family);
-    }
-	@media (min-width: 1024px) {
-    	h1 {
+		width: var(--width-for-mobile);
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(auto, 340px));
+		gap: 30px;
+		justify-content: center;
+		padding: 10px;
+		margin: 20px 0 20px 0;
+	}
+    @media (min-width: 1024px) {
+    	ul {
         	width: var(--width-for-desktop);
     	}
 	}

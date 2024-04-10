@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+const { certificateBrand, certificateText, certificateImageURL} = Astro.props
+---
+<Layout title="Certificates">
+    <section>
+        <h2>{certificateBrand}</h2>
+        <p>{certificateText}</p>
+        <img src={certificateImageURL}>
+    </section>
+</Layout>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        font-family: var(--root-font-family);
+        background-color: var(--very-light-gray-color);
+    }
+    h2, p {
+        color: var(--black-text-color);
+        margin: 0;
+    }
+    h2 {
+        font-size: var(--font-size-l);
+        box-shadow: rgba(129, 129, 129, 0.438) 0px 2px 8px;
+        text-align: center;
+        padding: 10px;
+    }
+    p {
+        font-size: var(--font-size-m);
+        padding: 20px 20px 0 20px;
+    }
+    img {
+        padding: 20px;
+    }
+</style>

@@ -276,6 +276,50 @@ declare module 'astro:content' {
   data: InferEntrySchema<"air-conditioners">
 } & { render(): Render[".md"] };
 };
+"certificates": {
+"certificate1.md": {
+	id: "certificate1.md";
+  slug: "certificate1";
+  body: string;
+  collection: "certificates";
+  data: InferEntrySchema<"certificates">
+} & { render(): Render[".md"] };
+"certificate2.md": {
+	id: "certificate2.md";
+  slug: "certificate2";
+  body: string;
+  collection: "certificates";
+  data: InferEntrySchema<"certificates">
+} & { render(): Render[".md"] };
+"certificate3.md": {
+	id: "certificate3.md";
+  slug: "certificate3";
+  body: string;
+  collection: "certificates";
+  data: InferEntrySchema<"certificates">
+} & { render(): Render[".md"] };
+"certificate4.md": {
+	id: "certificate4.md";
+  slug: "certificate4";
+  body: string;
+  collection: "certificates";
+  data: InferEntrySchema<"certificates">
+} & { render(): Render[".md"] };
+"certificate5.md": {
+	id: "certificate5.md";
+  slug: "certificate5";
+  body: string;
+  collection: "certificates";
+  data: InferEntrySchema<"certificates">
+} & { render(): Render[".md"] };
+"certificate6.md": {
+	id: "certificate6.md";
+  slug: "certificate6";
+  body: string;
+  collection: "certificates";
+  data: InferEntrySchema<"certificates">
+} & { render(): Render[".md"] };
+};
 "realization": {
 "realization1.md": {
 	id: "realization1.md";
