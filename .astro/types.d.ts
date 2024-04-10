@@ -276,6 +276,50 @@ declare module 'astro:content' {
   data: InferEntrySchema<"air-conditioners">
 } & { render(): Render[".md"] };
 };
+"realization": {
+"realization1.md": {
+	id: "realization1.md";
+  slug: "realization1";
+  body: string;
+  collection: "realization";
+  data: InferEntrySchema<"realization">
+} & { render(): Render[".md"] };
+"realization2.md": {
+	id: "realization2.md";
+  slug: "realization2";
+  body: string;
+  collection: "realization";
+  data: InferEntrySchema<"realization">
+} & { render(): Render[".md"] };
+"realization3.md": {
+	id: "realization3.md";
+  slug: "realization3";
+  body: string;
+  collection: "realization";
+  data: InferEntrySchema<"realization">
+} & { render(): Render[".md"] };
+"realization4.md": {
+	id: "realization4.md";
+  slug: "realization4";
+  body: string;
+  collection: "realization";
+  data: InferEntrySchema<"realization">
+} & { render(): Render[".md"] };
+"realization5.md": {
+	id: "realization5.md";
+  slug: "realization5";
+  body: string;
+  collection: "realization";
+  data: InferEntrySchema<"realization">
+} & { render(): Render[".md"] };
+"realization6.md": {
+	id: "realization6.md";
+  slug: "realization6";
+  body: string;
+  collection: "realization";
+  data: InferEntrySchema<"realization">
+} & { render(): Render[".md"] };
+};
 "services": {
 "service1.md": {
 	id: "service1.md";

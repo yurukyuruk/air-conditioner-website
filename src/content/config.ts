@@ -21,6 +21,13 @@ const airConditionerCollection = defineCollection({
   })
 });
 
+const realizationCollection = defineCollection({
+  schema: z.object({
+    realizationImages: z.array(z.string()),
+    realizationText: z.string(),
+    realizationCost: z.number()
+  })
+}); 
 const airConditionerBrandsCollection = defineCollection({
   schema: z.object({
     brandName: z.string(),
@@ -31,7 +38,8 @@ const airConditionerBrandsCollection = defineCollection({
 export const collections = {
   "services": servicesCollection,
   "air-conditioners": airConditionerCollection,
-  "air-conditioner-brands": airConditionerBrandsCollection
+  "air-conditioner-brands": airConditionerBrandsCollection,
+  "realization": realizationCollection
 };
 
 
