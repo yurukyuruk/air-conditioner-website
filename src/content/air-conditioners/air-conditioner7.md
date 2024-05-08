@@ -1,5 +1,5 @@
 ---
-modelName:  15345 Ekolojik Inverter Klima
+modelName: 15345 Ekolojik Inverter Klima
 energy: 19500
 sound: 56
 airConditionerPrice: 1900
