@@ -3,14 +3,63 @@ import Layout from '../layouts/Layout.astro';
 const { certificateBrand, certificateText, certificateImageURL} = Astro.props
 ---
 <Layout title="Certificates">
+    <div class="pop-up">
+        <div class="background"></div>
+        <img class="big-image" src={certificateImageURL}>
+        <button>x</button>
+    </div>
     <section>
         <h2>{certificateBrand}</h2>
         <p>{certificateText}</p>
-        <img src={certificateImageURL}>
+        <img class="small-image" src={certificateImageURL}>
     </section>
 </Layout>
 
+<script>
+    const popUp = document.querySelector(".pop-up");
+    const certificate = document.querySelector("section");
+    const image = document.querySelector(".small-image");
+    const closeButton = document.querySelector("button");
+
+    image?.addEventListener("click", () => {
+        popUp?.classList.add("show");
+        certificate?.classList.add("hidden");
+    })
+    closeButton?.addEventListener("click", () => {
+        popUp?.classList.remove("show");
+        certificate?.classList.remove("hidden");
+    })
+</script>
+
 <style>
+    .pop-up {
+        display: none;
+    }
+    .background {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.525);
+        z-index: 1;
+    }
+    .big-image {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        top: calc(50vh - 100px);
+        left: calc(50vh - 150px);
+        z-index: 2;
+    }
+    button {
+        position: absolute;
+        top: calc(50vh - 80px);
+        left: calc(50vh - 130px);
+        background-color: white;
+        z-index: 2;
+    }
+    .show {
+        display: block;
+    }
     section {
         display: flex;
         flex-direction: column;
@@ -33,5 +82,8 @@ const { certificateBrand, certificateText, certificateImageURL} = Astro.props
     }
     img {
         padding: 20px;
+    }
+    .hidden {
+        display: none;
     }
 </style>
