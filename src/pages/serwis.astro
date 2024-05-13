@@ -1,9 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import SubPageHeader from '../components/SubPageHeader.astro';
-import { getCollection } from "astro:content";
 const allServices = await getCollection("services");
 import Service from "../components/Service.astro";
 ---

@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+const { workType, ventilationDescription, ventilationImageList } = Astro.props;
+---
+
+<Layout title="Ventilation">
+    <section>
+        <h3>{workType}</h3>
+        <p>{ventilationDescription}</p>
+        <ul>
+            <li><img src={ventilationImageList[0]} alt="Obraz wentylacji"></li>
+            <li><img src={ventilationImageList[1]} alt="Obraz wentylacji"></li>
+            <li><img src={ventilationImageList[2]} alt="Obraz wentylacji"></li>
+            <li><img src={ventilationImageList[3]} alt="Obraz wentylacji"></li>
+        </ul>
+    </section>
+</Layout>
+
+<style>
+    h3, p, ul, li {
+        margin: 0;
+        padding: 0;
+    }
+    section {
+        font-family: var(--root-font-family);
+        width: var(--width-for-mobile);
+    }
+    h3{
+        font-size: var(--font-size-l);
+        padding: 32px 0 16px 0;
+    }
+    p{
+        font-size: var(--font-size-m);
+        padding-bottom: 16px;
+    }
+    ul {
+        display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(auto, 340px));
+		gap: 20px;
+		justify-content: center;
+        padding-bottom: 32px;
+    }
+    li {
+        list-style: none;
+    }
+
+    @media (min-width: 1024px) {
+    	section {
+        	width: var(--width-for-desktop);
+    	}
+	}
+</style>
