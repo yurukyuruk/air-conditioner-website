@@ -1,15 +1,89 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import SubPageHeader from '../components/SubPageHeader.astro';
+import HeatPump from '../components/HeatPump.astro';
+const allHeatPumps = await getCollection("heat-pump");
 ---
 
 <Layout title="Pompy Ciepła">
 	<Header></Header>
     <SubPageHeader subPageName="Pompy Ciepła"/>
+	<section class="brands-section">
+		<ul class="heat-pump-list">
+            {
+                 allHeatPumps.map((heatPump, key) => (
+                    <HeatPump index={key} brandNameOfHeatPump={heatPump.data.brandNameOfHeatPump} content={heatPump.data.content} url={heatPump.data.url}/>
+                ))
+              }
+        </ul>
+		<section>
+			<h3>REALIZACJE</h3>
+			<ul class="image-list">
+				<li><img src="/images/heat-pump-1.png" alt="Obraz pompy ciepła"></li>
+				<li><img src="/images/heat-pump-2.png" alt="Obraz pompy ciepła"></li>
+				<li><img src="/images/heat-pump-1.png" alt="Obraz pompy ciepła"></li>
+				<li><img src="/images/heat-pump-2.png" alt="Obraz pompy ciepła"></li>
+				<li><img src="/images/heat-pump-1.png" alt="Obraz pompy ciepła"></li>
+				<li><img src="/images/heat-pump-2.png" alt="Obraz pompy ciepła"></li>
+				<li><img src="/images/heat-pump-1.png" alt="Obraz pompy ciepła"></li>
+				<li><img src="/images/heat-pump-2.png" alt="Obraz pompy ciepła"></li>
+				<li><img src="/images/heat-pump-1.png" alt="Obraz pompy ciepła"></li>
+				<li><img src="/images/heat-pump-2.png" alt="Obraz pompy ciepła"></li>
+				<li><img src="/images/heat-pump-1.png" alt="Obraz pompy ciepła"></li>
+				<li><img src="/images/heat-pump-2.png" alt="Obraz pompy ciepła"></li>
+			</ul>
+		</section>
+	</section>
 	<Footer></Footer>
 </Layout>
 
 <style>
+	.heat-pump-list {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+	}
+	section {
+		width: var(--width-for-mobile);
+	}
+	.image-list {
+		
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(auto, 340px));
+		gap: 10px;
+		justify-content: center;
+		padding: 0;
+		margin: 20px 0 20px 0;
+	}
+	img {
+		padding-top: 20px;
+	}
+	.brands-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	ul, li, h3 {
+		margin: 0;
+	}
+	li {
+		list-style: none;
+	}
+	h3 {
+		font-family: var(--root-font-family);
+		width: var(--width-for-mobile);
+		text-align: start;
+	}
+
+	@media (min-width: 1024px) {
+    	h3, section {
+        	width: var(--width-for-desktop);
+    	}
+	}
 </style>

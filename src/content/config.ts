@@ -35,11 +35,20 @@ const airConditionerBrandsCollection = defineCollection({
   })
 });
 
+const heatPumpCollection = defineCollection({
+  schema: z.object({
+    brandNameOfHeatPump: z.string(),
+    content: z.string(),
+    url: z.string()
+  })
+});
+
 export const collections = {
   "services": servicesCollection,
   "air-conditioners": airConditionerCollection,
   "air-conditioner-brands": airConditionerBrandsCollection,
-  "realization": realizationCollection
+  "realization": realizationCollection,
+  "heat-pump": heatPumpCollection
 };
 
 

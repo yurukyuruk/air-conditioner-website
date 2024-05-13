@@ -276,6 +276,24 @@ declare module 'astro:content' {
   data: InferEntrySchema<"air-conditioners">
 } & { render(): Render[".md"] };
 };
+"heat-pump": {
+"heat-pump-1.md": {
+	id: "heat-pump-1.md";
+  slug: "heat-pump-1";
+  body: string;
+  collection: "heat-pump";
+  data: InferEntrySchema<"heat-pump">
+} & { render(): Render[".md"] };
+"heat-pump-2.md": {
+	id: "heat-pump-2.md";
+  slug: "heat-pump-2";
+  body: string;
+  collection: "heat-pump";
+  data: InferEntrySchema<"heat-pump">
+} & { render(): Render[".md"] };
+};
+"heat-pumps": {
+};
 "realization": {
 "realization1.md": {
 	id: "realization1.md";
