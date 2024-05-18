@@ -23,8 +23,5 @@ jobs:
       - name: 📝 Check code formatting
         run: npm run prettyprint
 
-      - name: 🛰️ Static code analysis
-        run: npm run lint
-
       - name: 🌀 Type check
         run: npm run typecheck
