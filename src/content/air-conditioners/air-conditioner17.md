@@ -1,5 +1,5 @@
 ---
-modelName:  14610 Ekolojik Inverter Klima
+modelName: 14610 Ekolojik Inverter Klima
 energy: 14240
 sound: 42
 airConditionerPrice: 2900

@@ -1,5 +1,5 @@
 ---
-modelName:  15323 Ekolojik Inverter Klima
+modelName: 15323 Ekolojik Inverter Klima
 energy: 13000
 sound: 25
 airConditionerPrice: 2060
