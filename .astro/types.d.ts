@@ -292,8 +292,6 @@ declare module 'astro:content' {
   data: InferEntrySchema<"heat-pump">
 } & { render(): Render[".md"] };
 };
-"heat-pumps": {
-};
 "realization": {
 "realization1.md": {
 	id: "realization1.md";
