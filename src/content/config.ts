@@ -28,6 +28,15 @@ const realizationCollection = defineCollection({
     realizationCost: z.number(),
   }),
 });
+
+const certificatesCollection = defineCollection({
+  schema: z.object({
+    certificateBrand: z.string(),
+    certificateText: z.string(),
+    certificateImageURL: z.string(),
+  }),
+});
+
 const airConditionerBrandsCollection = defineCollection({
   schema: z.object({
     brandName: z.string(),
@@ -40,4 +49,5 @@ export const collections = {
   'air-conditioners': airConditionerCollection,
   'air-conditioner-brands': airConditionerBrandsCollection,
   realization: realizationCollection,
+  certificates: certificatesCollection,
 };
