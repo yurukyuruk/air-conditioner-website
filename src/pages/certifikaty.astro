@@ -6,7 +6,6 @@ import SubPageHeader from '../components/SubPageHeader.astro';
 import Certificate from '../components/Certificate.astro';
 import { getCollection } from "astro:content";
 const allCertificates = await getCollection("certificates");
-const allPopUps = await getCollection("certificates");
 ---
 
 <Layout title="Certifikaty">
@@ -16,10 +15,10 @@ const allPopUps = await getCollection("certificates");
         <ul>
             {
                 allCertificates.map((certificate, index) => (
-                    <Certificate 
-                        key={index} 
-                        certificateBrand={certificate.data.certificateBrand} 
-                        certificateText={certificate.data.certificateText} 
+                    <Certificate
+                        key={index}
+                        certificateBrand={certificate.data.certificateBrand}
+                        certificateText={certificate.data.certificateText}
                         certificateImageURL={certificate.data.certificateImageURL}
                     />
                 ))
