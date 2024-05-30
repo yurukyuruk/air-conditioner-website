@@ -13,8 +13,8 @@ import Ventilation from "../components/Ventilation.astro";
 	<SubPageHeader subPageName="Wentylacja"/>
 	<ul>
 		{
-			 allVentilations.map((ventilation, index) => (
-        		<Ventilation key={index} workType={ventilation.data.workType} ventilationDescription={ventilation.data.ventilationDescription} ventilationImageList={ventilation.data.ventilationImageList}/>
+			 allVentilations.map((ventilation) => (
+        		<Ventilation workType={ventilation.data.workType} ventilationDescription={ventilation.data.ventilationDescription} ventilationImageList={ventilation.data.ventilationImageList}/>
     		))
 		  }
 	</ul>
