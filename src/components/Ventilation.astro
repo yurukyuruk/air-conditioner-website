@@ -9,18 +9,61 @@ const { workType, ventilationDescription, ventilationImageList } = Astro.props;
         <p>{ventilationDescription}</p>
         <div class="slider">
             <ul class="slides">
-                {
-                    ventilationImageList.map((image: string) => (
-                        <li>
-                            <img src={image} alt="Obraz wentylacji" class="slide"/>
-                        </li>
-                   ))
-                 }
+                {ventilationImageList.map((image: string) => (
+                    <li class="slide">
+                        <img src={image} alt="Obraz wentylacji" />
+                    </li>
+                ))}
             </ul>
-            <button class="nav prev">&#10094;</button>
+            <button class="nav prev" disabled>&#10094;</button>
             <button class="nav next">&#10095;</button>
         </div>
     </section>
+
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliders = document.querySelectorAll('.slider');
+
+            sliders.forEach(slider => {
+                let currentSlide = 0;
+                const slides = slider.querySelectorAll('.slide');
+                const totalSlides = slides.length;
+                const prevButton = slider.querySelector('.prev');
+                const nextButton = slider.querySelector('.next');
+
+                function updateButtons() {
+                    prevButton.disabled = currentSlide === 0;
+                    nextButton.disabled = currentSlide === totalSlides - 1;
+                }
+
+                function showSlide(index) {
+                    const sliderWrapper = slider.querySelector('.slides');
+                    sliderWrapper.style.transform = `translateX(${-index * 100}%)`;
+                    updateButtons();
+                }
+
+                function prevSlide() {
+                    if (currentSlide > 0) {
+                        currentSlide -= 1;
+                        showSlide(currentSlide);
+                    }
+                }
+
+                function nextSlide() {
+                    if (currentSlide < totalSlides - 1) {
+                        currentSlide += 1;
+                        showSlide(currentSlide);
+                    }
+                }
+
+                prevButton.addEventListener('click', prevSlide);
+                nextButton.addEventListener('click', nextSlide);
+
+                // Initial button state update
+                updateButtons();
+            });
+        });
+    </script>
 </Layout>
 
 <style>
@@ -28,118 +71,74 @@ const { workType, ventilationDescription, ventilationImageList } = Astro.props;
         margin: 0;
         padding: 0;
     }
+    li {
+        list-style: none;
+    }
     section {
         font-family: var(--root-font-family);
         width: var(--width-for-mobile);
+        margin: auto;
     }
-    h3{
+    h3 {
         font-size: var(--font-size-l);
-        padding: 32px 0 16px 0;
+        padding: 0 0 16px 0;
     }
-    p{
+    p {
         font-size: var(--font-size-m);
         padding-bottom: 16px;
     }
-    @media (min-width: 1024px) {
-    	section {
-        	width: var(--width-for-desktop);
-    	}
-	}
-
     .slider {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    overflow: hidden;
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    display: none;
-    list-style: none;
-}
-
-.slide.active {
-    display: block;
-}
-
-.nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.nav:disabled {
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: not-allowed;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-</style>
-
-<script>
-  let currentIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const nextButton = document.querySelector<HTMLButtonElement>('.next');
-const prevButton = document.querySelector<HTMLButtonElement>('.prev');
-
-function showSlide(index: number) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) {
-            slide.classList.add('active');
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        overflow: hidden;
+    }
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+    }
+    .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 20px 0 60px 0;
+    }
+    .slide img {
+        width: 100%;
+        display: block;
+    }
+    .nav {
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+    }
+    .prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    .next {
+        right: 0;
+        border-radius: 0 3px 3px 0;
+    }
+    .nav:disabled {
+        background-color: rgba(0, 0, 0, 0.2);
+        cursor: not-allowed;
+    }
+    @media (min-width: 1024px) {
+        section {
+            width: var(--width-for-desktop);
         }
-    });
-
-    // Disable buttons at boundaries
-    if (prevButton) {
-        prevButton.disabled = index === 0;
     }
-    if (nextButton) {
-        nextButton.disabled = index === 3;
-    }
-}
-
-function nextSlide() {
-    if (currentIndex < slides.length - 1) {
-        currentIndex++;
-        showSlide(currentIndex);
-    }
-}
-
-function prevSlide() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        showSlide(currentIndex);
-    }
-}
-
-// Initial display
-showSlide(currentIndex);
-
-// Add event listeners
-if(nextButton) {
-    nextButton.addEventListener('click', nextSlide);
-}
-if(prevButton) {
-    prevButton.addEventListener('click', prevSlide);
-}
-console.log(slides);
-</script>
+</style>

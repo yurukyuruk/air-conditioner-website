@@ -52,6 +52,14 @@ const heatPumpCollection = defineCollection({
   }),
 });
 
+const ventilationsCollection = defineCollection({
+  schema: z.object({
+    workType: z.string(),
+    ventilationDescription: z.string(),
+    ventilationImageList: z.array(z.string()),
+  }),
+});
+
 export const collections = {
   services: servicesCollection,
   'air-conditioners': airConditionerCollection,
@@ -59,4 +67,5 @@ export const collections = {
   realization: realizationCollection,
   'heat-pump': heatPumpCollection,
   certificates: certificatesCollection,
+  ventilations: ventilationsCollection,
 };
