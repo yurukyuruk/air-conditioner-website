@@ -50,7 +50,7 @@ const allHeatPumps = await getCollection("heat-pump");
     const imagesPerLoad = 6;
     let visibleImages = 0;
 
-    const imageList = document.querySelector('.image-list');
+    const imageList = document.querySelector<HTMLUListElement>('.image-list');
     const seeMoreButton = document.querySelector('.see-more-button');
 
     function renderImages() {
@@ -61,18 +61,20 @@ const allHeatPumps = await getCollection("heat-pump");
             img.src = image.heatPumpImageSrc;
             img.alt = 'Obraz pompy ciepła';
             li.appendChild(img);
-            imageList.appendChild(li);
+            imageList?.appendChild(li);
         });
 
         visibleImages += imagesPerLoad;
 
         if (visibleImages >= allHeatPumpImages.length) {
-            seeMoreButton.style.display = 'none';
+			if(seeMoreButton) {
+				(seeMoreButton as HTMLButtonElement).style.display = 'none';
+			}
         }
     }
-
-    seeMoreButton.addEventListener('click', renderImages);
-
+	if(seeMoreButton) {
+		seeMoreButton.addEventListener('click', renderImages);
+	}
     // Initial render
     renderImages();
 });

@@ -10,7 +10,7 @@ const { workType, ventilationDescription, ventilationImageList } = Astro.props;
         <div class="slider">
             <ul class="slides">
                 {
-                    ventilationImageList.map((image) => (
+                    ventilationImageList.map((image: string) => (
                         <li>
                             <img src={image} alt="Obraz wentylacji" class="slide"/>
                         </li>
@@ -97,10 +97,10 @@ const { workType, ventilationDescription, ventilationImageList } = Astro.props;
 <script>
   let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
-const nextButton = document.querySelector('.next');
-const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector<HTMLButtonElement>('.next');
+const prevButton = document.querySelector<HTMLButtonElement>('.prev');
 
-function showSlide(index) {
+function showSlide(index: number) {
     slides.forEach((slide, i) => {
         slide.classList.remove('active');
         if (i === index) {
@@ -109,8 +109,12 @@ function showSlide(index) {
     });
 
     // Disable buttons at boundaries
-    prevButton.disabled = index === 0;
-    nextButton.disabled = index === 3;
+    if (prevButton) {
+        prevButton.disabled = index === 0;
+    }
+    if (nextButton) {
+        nextButton.disabled = index === 3;
+    }
 }
 
 function nextSlide() {
@@ -131,7 +135,11 @@ function prevSlide() {
 showSlide(currentIndex);
 
 // Add event listeners
-nextButton.addEventListener('click', nextSlide);
-prevButton.addEventListener('click', prevSlide);
+if(nextButton) {
+    nextButton.addEventListener('click', nextSlide);
+}
+if(prevButton) {
+    prevButton.addEventListener('click', prevSlide);
+}
 console.log(slides);
 </script>
