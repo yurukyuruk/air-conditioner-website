@@ -2,6 +2,14 @@
 import MobileHeader from "./MobileHeader.astro";
 import DesktopHeader from "./DesktopHeader.astro";
 ---
+<MobileHeader class="header"></MobileHeader>
+<DesktopHeader class="header"></DesktopHeader>
+<style>
+    .header-hidden {
+        top: -74px; 
+    }
+</style>
+
 <script>
     let lastScrollTop = 0;
     let header = document.querySelectorAll(".header")
@@ -32,10 +40,3 @@ import DesktopHeader from "./DesktopHeader.astro";
         });
     });
 </script>
-<MobileHeader class="header"></MobileHeader>
-<DesktopHeader class="header"></DesktopHeader>
-<style>
-    .header-hidden {
-        top: -74px; 
-    }
-</style>

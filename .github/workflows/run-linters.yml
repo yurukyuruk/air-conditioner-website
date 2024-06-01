@@ -1,0 +1,27 @@
+name: Run linters
+on: workflow_call
+jobs:
+  run_linters:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🏗️ Checkout
+        uses: actions/checkout@v4
+
+      - name: 🦠 Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: 🛠️ Install dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
+      - name: 📝 Check code formatting
+        run: npm run prettyprint
+
+      - name: 🌀 Type check
+        run: npm run typecheck

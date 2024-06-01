@@ -3,15 +3,14 @@ import { getCollection } from "astro:content";
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import SubPageHeader from '../components/SubPageHeader.astro';
 import GrouppedAirConditioners from '../components/GrouppedAirConditioners.astro';
 const allAirConditionerBrands = await getCollection("air-conditioner-brands");
 ---
 
 <Layout title="Klimatyzacje">
 	<Header></Header>
-	<div>
-        <h1>Klimatyzacje</h1>
-    </div>
+	<SubPageHeader subPageName="Klimatyzacje"/>
 	<section>
 		<ul>
             {
@@ -25,21 +24,6 @@ const allAirConditionerBrands = await getCollection("air-conditioner-brands");
 </Layout>
 
 <style>
-	div {
-        width: 100%;
-        background-color: var(--main-blue-color);
-        display: flex;
-        justify-content: center;
-        margin-top: 48px;
-    }
-    h1 {
-        color: var(--white-text-color);
-        padding: 30px 0 30px 0;
-        margin: 0;
-        font-size: var(--font-size-xl);
-        width: var(--width-for-mobile);
-		font-family: var(--root-font-family);
-    }
 	section {
 		width: 100%;
 		display: flex;
@@ -52,7 +36,7 @@ const allAirConditionerBrands = await getCollection("air-conditioner-brands");
 		padding: 0;
 	}
 	@media (min-width: 1024px) {
-    	h1, ul {
+    	ul {
         	width: var(--width-for-desktop);
     	}
 	}
