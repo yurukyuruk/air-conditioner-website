@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+const { brandNameOfHeatPump, content, url } = Astro.props;
+---
+
+<Layout title="Realization">
+    <section>
+        <h2>{brandNameOfHeatPump}</h2>
+        <p>{content}</p>
+        <a href={url} target="_blank">Zobacz katalog</a>
+    </section>
+</Layout>
+
+<style>
+    section {
+        font-family: var(--root-font-family);
+        width: var(--width-for-mobile);
+        display: flex;
+        flex-direction: column;
+        padding: 16px 0 16px 0;
+    }
+    h2, p {
+        margin: 0;
+    }
+    h2 {
+        color: var(--main-blue-color);
+        font-size: var(--font-size-l);
+        padding-bottom: 16px;
+    }
+    p {
+        font-size: var(--font-size-m);
+        padding-bottom: 16px;
+    }
+    a {
+        color: var(--black-text-color);
+        background-color: var(--main-background-color);
+        text-decoration: none;
+        font-size: var(--font-size-l);
+        width: 220px;
+        border: 2px var(--main-blue-color) solid;
+        padding: 10px 20px 10px 20px;
+        margin-bottom: 20px;text-align: center;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.438) 0px 2px 8px;
+        transition: transform 0.5s ease-in-out;
+        align-self: flex-end;
+        margin: 0;
+    }
+    a:hover, a:active {
+        transform: scale(1.1);
+        background-color: var(--main-blue-color);
+        color: white;
+    }
+
+    @media (min-width: 1024px) {
+    	section {
+        	width: var(--width-for-desktop);
+    	}
+	}
+</style>

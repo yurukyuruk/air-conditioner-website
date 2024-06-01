@@ -1,15 +1,173 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import SubPageHeader from '../components/SubPageHeader.astro';
+import HeatPump from '../components/HeatPump.astro';
+const allHeatPumps = await getCollection("heat-pump");
 ---
 
 <Layout title="Pompy Ciepła">
 	<Header></Header>
     <SubPageHeader subPageName="Pompy Ciepła"/>
+	<section class="brands-section">
+		<ul class="heat-pump-list">
+            {
+                 allHeatPumps.map((heatPump, key) => (
+                    <HeatPump index={key} brandNameOfHeatPump={heatPump.data.brandNameOfHeatPump} content={heatPump.data.content} url={heatPump.data.url}/>
+                ))
+              }
+        </ul>
+		<section class="realization-section">
+			<h3>REALIZACJE</h3>
+			<ul class="image-list"></ul>
+			<button class="see-more-button">See More</button>
+		</section>
+	</section>
 	<Footer></Footer>
+
+	<script>
+		const allHeatPumpImages = [
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' }
+    ];
+		const imagesPerLoad = window.innerWidth > 2159 ? 8 : 6; // Check screen width
+		let visibleImages = 0;
+	
+		const imageList = document.querySelector<HTMLUListElement>('.image-list');
+		const seeMoreButton = document.querySelector('.see-more-button');
+	
+		function renderImages() {
+			const nextImages = allHeatPumpImages.slice(visibleImages, visibleImages + imagesPerLoad);
+			nextImages.forEach(image => {
+				const li = document.createElement('li');
+				const img = document.createElement('img');
+				img.src = image.heatPumpImageSrc;
+				img.alt = 'Obraz pompy ciepła';
+				li.appendChild(img);
+				imageList?.appendChild(li);
+			});
+	
+			visibleImages += imagesPerLoad;
+	
+			if (visibleImages >= allHeatPumpImages.length) {
+				if (seeMoreButton) {
+					(seeMoreButton as HTMLButtonElement).style.display = 'none';
+				}
+			}
+		}
+	
+		if (seeMoreButton) {
+			seeMoreButton.addEventListener('click', renderImages);
+		}
+	
+		// Initial render
+		renderImages();
+	
+	</script>
 </Layout>
 
+
 <style>
+	.heat-pump-list {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+	}
+	section {
+		width: var(--width-for-mobile);
+	}
+	.realization-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.image-list {
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(auto, 310px));
+		gap: 30px;
+		justify-content: center;
+		padding: 10px;
+		margin: 20px 0 20px 0;
+	}
+	h3 {
+		align-self: flex-start;
+	}
+	img {
+		padding-top: 20px;
+	}
+	button {
+        color: var(--black-text-color);
+        background-color: var(--main-background-color);
+        text-decoration: none;
+        font-size: var(--font-size-l);
+        width: 220px;
+        border: 2px var(--main-blue-color) solid;
+        padding: 10px 20px 10px 20px;
+        margin-bottom: 20px;text-align: center;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.438) 0px 2px 8px;
+        transition: transform 0.5s ease-in-out;
+        align-self: center;
+        margin: 0;
+		cursor: pointer;
+		margin-bottom: 32px;
+	}
+	button:hover, button:active {
+        transform: scale(1.1);
+        background-color: var(--main-blue-color);
+		color: white;
+    }
+	.brands-section {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	ul, li, h3 {
+		margin: 0;
+	}
+	li {
+		list-style: none;
+	}
+	h3 {
+		font-family: var(--root-font-family);
+		width: var(--width-for-mobile);
+		text-align: start;
+	}
+
+	@media (min-width: 1024px) {
+    	h3, section {
+        	width: var(--width-for-desktop);
+    	}
+		.image-list {
+		grid-template-columns: repeat(auto-fill, minmax(auto, 310px));
+		max-width: calc(3 * 310px + 2 * 30px);
+		gap: 30px;
+		justify-content: center;
+		padding: 10px;
+		margin: 20px 0 20px 0;
+	}
+	}
+	@media (min-width: 2160px) {
+		.image-list {
+			max-width: calc(4 * 310px + 3 * 30px);
+		}
+	}
 </style>
