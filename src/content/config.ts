@@ -58,5 +58,5 @@ export const collections = {
   "air-conditioner-brands": airConditionerBrandsCollection,
   "realization": realizationCollection,
   "heat-pump": heatPumpCollection,
-  "certificates": certificatesCollection,
+  "certificates": certificatesCollection
 };

@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+const { workType, ventilationDescription, ventilationImageList } = Astro.props;
+---
+
+<Layout title="Ventilation">
+    <section>
+        <h3>{workType}</h3>
+        <p>{ventilationDescription}</p>
+        <div class="slider">
+            <ul class="slides">
+                {
+                    ventilationImageList.map((image) => (
+                        <li>
+                            <img src={image} alt="Obraz wentylacji" class="slide"/>
+                        </li>
+                   ))
+                 }
+            </ul>
+            <button class="nav prev">&#10094;</button>
+            <button class="nav next">&#10095;</button>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    h3, p, ul, li {
+        margin: 0;
+        padding: 0;
+    }
+    section {
+        font-family: var(--root-font-family);
+        width: var(--width-for-mobile);
+    }
+    h3{
+        font-size: var(--font-size-l);
+        padding: 32px 0 16px 0;
+    }
+    p{
+        font-size: var(--font-size-m);
+        padding-bottom: 16px;
+    }
+    @media (min-width: 1024px) {
+    	section {
+        	width: var(--width-for-desktop);
+    	}
+	}
+
+    .slider {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    display: none;
+    list-style: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.nav:disabled {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+</style>
+
+<script>
+  let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active');
+        }
+    });
+
+    // Disable buttons at boundaries
+    prevButton.disabled = index === 0;
+    nextButton.disabled = index === 3;
+}
+
+function nextSlide() {
+    if (currentIndex < slides.length - 1) {
+        currentIndex++;
+        showSlide(currentIndex);
+    }
+}
+
+function prevSlide() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        showSlide(currentIndex);
+    }
+}
+
+// Initial display
+showSlide(currentIndex);
+
+// Add event listeners
+nextButton.addEventListener('click', nextSlide);
+prevButton.addEventListener('click', prevSlide);
+console.log(slides);
+</script>

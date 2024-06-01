@@ -19,21 +19,65 @@ const allHeatPumps = await getCollection("heat-pump");
                 ))
               }
         </ul>
-		<section>
+		<section class="realization-section">
 			<h3>REALIZACJE</h3>
-			<ul class="image-list">
-				<li><img src="/images/heat-pump-1.png" alt="Obraz pompy ciepła"></li>
-				<li><img src="/images/heat-pump-2.png" alt="Obraz pompy ciepła"></li>
-				<li><img src="/images/heat-pump-1.png" alt="Obraz pompy ciepła"></li>
-				<li><img src="/images/heat-pump-2.png" alt="Obraz pompy ciepła"></li>
-				<li><img src="/images/heat-pump-1.png" alt="Obraz pompy ciepła"></li>
-				<li><img src="/images/heat-pump-2.png" alt="Obraz pompy ciepła"></li>
-			</ul>
+			<ul class="image-list"></ul>
+			<button class="see-more-button">See More</button>
 		</section>
 	</section>
 	<Footer></Footer>
 </Layout>
 
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+    const allHeatPumpImages = [
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' },
+        { heatPumpImageSrc: '/images/heat-pump-1.png' },
+        { heatPumpImageSrc: '/images/heat-pump-2.png' }
+    ];
+
+    const imagesPerLoad = 6;
+    let visibleImages = 0;
+
+    const imageList = document.querySelector('.image-list');
+    const seeMoreButton = document.querySelector('.see-more-button');
+
+    function renderImages() {
+        const nextImages = allHeatPumpImages.slice(visibleImages, visibleImages + imagesPerLoad);
+        nextImages.forEach(image => {
+            const li = document.createElement('li');
+            const img = document.createElement('img');
+            img.src = image.heatPumpImageSrc;
+            img.alt = 'Obraz pompy ciepła';
+            li.appendChild(img);
+            imageList.appendChild(li);
+        });
+
+        visibleImages += imagesPerLoad;
+
+        if (visibleImages >= allHeatPumpImages.length) {
+            seeMoreButton.style.display = 'none';
+        }
+    }
+
+    seeMoreButton.addEventListener('click', renderImages);
+
+    // Initial render
+    renderImages();
+});
+
+</script>
 <style>
 	.heat-pump-list {
 		width: 100%;
@@ -45,18 +89,43 @@ const allHeatPumps = await getCollection("heat-pump");
 	section {
 		width: var(--width-for-mobile);
 	}
+	.realization-section {
+		display: flex;
+		flex-direction: column;
+	}
 	.image-list {
-		
+		list-style: none;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(auto, 340px));
-		gap: 10px;
+		grid-template-columns: repeat(auto-fill, minmax(auto, 310px));
+		gap: 30px;
 		justify-content: center;
-		padding: 0;
+		padding: 10px;
 		margin: 20px 0 20px 0;
 	}
 	img {
 		padding-top: 20px;
 	}
+	button {
+        color: var(--black-text-color);
+        background-color: var(--main-background-color);
+        text-decoration: none;
+        font-size: var(--font-size-l);
+        width: 220px;
+        border: 2px var(--main-blue-color) solid;
+        padding: 10px 20px 10px 20px;
+        margin-bottom: 20px;text-align: center;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.438) 0px 2px 8px;
+        transition: transform 0.5s ease-in-out;
+        align-self: center;
+        margin: 0;
+		cursor: pointer;
+		margin-bottom: 32px;
+	}
+	button:hover, button:active {
+        transform: scale(1.1);
+        background-color: var(--main-blue-color);
+    }
 	.brands-section {
 		display: flex;
 		flex-direction: column;
