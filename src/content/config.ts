@@ -40,23 +40,23 @@ const certificatesCollection = defineCollection({
 const airConditionerBrandsCollection = defineCollection({
   schema: z.object({
     brandName: z.string(),
-    expanded: z.boolean()
-  })
+    expanded: z.boolean(),
+  }),
 });
 
 const heatPumpCollection = defineCollection({
   schema: z.object({
     brandNameOfHeatPump: z.string(),
     content: z.string(),
-    url: z.string()
-  })
+    url: z.string(),
+  }),
 });
 
 export const collections = {
-  "services": servicesCollection,
-  "air-conditioners": airConditionerCollection,
-  "air-conditioner-brands": airConditionerBrandsCollection,
-  "realization": realizationCollection,
-  "heat-pump": heatPumpCollection,
-  "certificates": certificatesCollection
+  services: servicesCollection,
+  'air-conditioners': airConditionerCollection,
+  'air-conditioner-brands': airConditionerBrandsCollection,
+  realization: realizationCollection,
+  'heat-pump': heatPumpCollection,
+  certificates: certificatesCollection,
 };
