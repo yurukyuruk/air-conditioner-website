@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+const { certificateBrand, certificateText, certificateImageURL} = Astro.props
+---
+<Layout title="Certificates">
+    <section>
+        <h2>{certificateBrand}</h2>
+        <p>{certificateText}</p>
+        <img class="small-image" alt="certyfikat" src={certificateImageURL}>
+    </section>
+</Layout>
+
+<script>
+</script>
+
+<style>
+    .pop-up {
+        display: none;
+    }
+    .background {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.525);
+        z-index: 1;
+    }
+    .big-image {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        top: calc(50vh - 100px);
+        left: calc(50vh - 150px);
+        z-index: 2;
+    }
+    button {
+        position: absolute;
+        top: calc(50vh - 80px);
+        left: calc(50vh - 130px);
+        background-color: white;
+        z-index: 2;
+    }
+    .show {
+        display: block;
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+        font-family: var(--root-font-family);
+        background-color: var(--very-light-gray-color);
+        box-shadow: rgba(129, 129, 129, 0.438) 0px 2px 8px;
+    }
+    h2, p {
+        color: var(--black-text-color);
+        margin: 0;
+    }
+    h2 {
+        font-size: var(--font-size-l);
+        text-align: center;
+        padding: 10px 0;
+        margin: 0 10px;
+        border-bottom: 1.5px solid var(--main-blue-color);
+    }
+    p {
+        font-size: var(--font-size-m);
+        padding: 20px 20px 0 20px;
+    }
+    img {
+        padding: 20px;
+    }
+    .hidden {
+        display: none;
+    }
+</style>

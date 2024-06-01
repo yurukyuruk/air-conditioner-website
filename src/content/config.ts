@@ -5,7 +5,7 @@ const servicesCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     price: z.number(),
-  })
+  }),
 });
 
 const airConditionerCollection = defineCollection({
@@ -17,17 +17,26 @@ const airConditionerCollection = defineCollection({
     klimaImage: z.string(),
     energyClass: z.string(),
     brand: z.string(),
-    linkToWebsite: z.string()
-  })
+    linkToWebsite: z.string(),
+  }),
 });
 
 const realizationCollection = defineCollection({
   schema: z.object({
     realizationImages: z.array(z.string()),
     realizationText: z.string(),
-    realizationCost: z.number()
-  })
-}); 
+    realizationCost: z.number(),
+  }),
+});
+
+const certificatesCollection = defineCollection({
+  schema: z.object({
+    certificateBrand: z.string(),
+    certificateText: z.string(),
+    certificateImageURL: z.string(),
+  }),
+});
+
 const airConditionerBrandsCollection = defineCollection({
   schema: z.object({
     brandName: z.string(),
@@ -48,8 +57,6 @@ export const collections = {
   "air-conditioners": airConditionerCollection,
   "air-conditioner-brands": airConditionerBrandsCollection,
   "realization": realizationCollection,
-  "heat-pump": heatPumpCollection
+  "heat-pump": heatPumpCollection,
+  "certificates": certificatesCollection,
 };
-
-
-

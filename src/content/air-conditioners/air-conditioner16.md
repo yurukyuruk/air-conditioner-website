@@ -1,5 +1,5 @@
 ---
-modelName:  14690 Ekolojik Inverter Klima
+modelName: 14690 Ekolojik Inverter Klima
 energy: 14600
 sound: 58
 airConditionerPrice: 1900
