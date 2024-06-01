@@ -44,10 +44,19 @@ const airConditionerBrandsCollection = defineCollection({
   }),
 });
 
+const ventilationsCollection = defineCollection({
+  schema: z.object({
+    workType: z.string(),
+    ventilationDescription: z.string(),
+    ventilationImageList: z.array(z.string()),
+  }),
+});
+
 export const collections = {
   services: servicesCollection,
   'air-conditioners': airConditionerCollection,
   'air-conditioner-brands': airConditionerBrandsCollection,
   realization: realizationCollection,
   certificates: certificatesCollection,
+  ventilations: ventilationsCollection,
 };

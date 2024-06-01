@@ -353,11 +353,27 @@ declare module 'astro:content' {
         data: InferEntrySchema<'services'>;
       } & { render(): Render['.md'] };
     };
+    ventilations: {
+      'ventilation-1.md': {
+        id: 'ventilation-1.md';
+        slug: 'ventilation-1';
+        body: string;
+        collection: 'ventilations';
+        data: InferEntrySchema<'ventilations'>;
+      } & { render(): Render['.md'] };
+      'ventilation-2.md': {
+        id: 'ventilation-2.md';
+        slug: 'ventilation-2';
+        body: string;
+        collection: 'ventilations';
+        data: InferEntrySchema<'ventilations'>;
+      } & { render(): Render['.md'] };
+    };
   };
 
   type DataEntryMap = {};
 
   type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-  export type ContentConfig = typeof import('../src/content/config.js');
+  export type ContentConfig = typeof import('./../src/content/config.js');
 }
