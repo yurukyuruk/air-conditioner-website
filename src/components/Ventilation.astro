@@ -9,8 +9,8 @@ const { workType, ventilationDescription, ventilationImageList } = Astro.props;
         <p>{ventilationDescription}</p>
         <div class="slider">
             <ul class="slides">
-                {ventilationImageList.map((image, index) => (
-                    <li class="slide" key={index}>
+                {ventilationImageList.map((image: string) => (
+                    <li class="slide">
                         <img src={image} alt="Obraz wentylacji" />
                     </li>
                 ))}
