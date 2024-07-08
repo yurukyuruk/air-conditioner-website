@@ -4,15 +4,15 @@ const { brandNameOfHeatPump, content, url } = Astro.props;
 ---
 
 <Layout title="Realization">
-    <section>
+    <li>
         <h2>{brandNameOfHeatPump}</h2>
         <p>{content}</p>
         <a href={url} target="_blank">Zobacz katalog</a>
-    </section>
+    </li>
 </Layout>
 
 <style>
-    section {
+    li {
         font-family: var(--root-font-family);
         width: var(--width-for-mobile);
         display: flex;
@@ -53,7 +53,7 @@ const { brandNameOfHeatPump, content, url } = Astro.props;
     }
 
     @media (min-width: 1024px) {
-    	section {
+    	li {
         	width: var(--width-for-desktop);
     	}
 	}
