@@ -3,7 +3,7 @@
 <ul class="image-list">
     <!-- Initial images will be rendered here by JavaScript -->
 </ul>
-<div id="overlay" class="overlay" onClick="handleOverlayClick()">
+<div id="overlay" class="overlay" onclick="handleOverlayClick()">
     <img id="overlay-image" class="overlay-image" src="" alt="Enlarged Image" />
 </div>
 <button class="see-more-button">See More</button>
@@ -32,7 +32,7 @@
 
       function renderImages() {
         const imageList = document.querySelector('.image-list');
-        const seeMoreButton = document.querySelector('.see-more-button');
+        const seeMoreButton: HTMLButtonElement | null= document.querySelector('.see-more-button');
         const nextImages = allHeatPumpImages.slice(visibleImages, visibleImages + imagesPerLoad);
         nextImages.forEach((image, index) => {
           const li = document.createElement('li');
@@ -41,7 +41,7 @@
           img.src = image.heatPumpImageSrc;
           img.alt = `Obraz pompy ciepła ${actualIndex + 1}`;
           img.className = 'gallery-image';
-          img.dataset.index = actualIndex;
+          img.dataset.index = actualIndex.toString();
           img.addEventListener('click', () => handleImageClick(actualIndex));
           li.appendChild(img);
           imageList?.appendChild(li);
@@ -56,10 +56,10 @@
         }
       }
 
-      function handleImageClick(index) {
+      function handleImageClick(index: number) {
         const overlay = document.getElementById('overlay');
-        const overlayImage = document.getElementById('overlay-image');
-        const image = document.querySelector(`img[data-index="${index}"]`);
+        const overlayImage = document.getElementById('overlay-image') as HTMLImageElement;
+        const image = document.querySelector(`img[data-index="${index}"]`) as HTMLImageElement;
 
         if (overlayImage && image) {
           overlayImage.src = image.src;

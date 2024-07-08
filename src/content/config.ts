@@ -5,7 +5,7 @@ const servicesCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     price: z.number(),
-  })
+  }),
 });
 
 const airConditionerCollection = defineCollection({
@@ -18,7 +18,7 @@ const airConditionerCollection = defineCollection({
     energyClass: z.string(),
     brand: z.string(),
     linkToWebsite: z.string(),
-  })
+  }),
 });
 
 const realizationCollection = defineCollection({
@@ -26,7 +26,7 @@ const realizationCollection = defineCollection({
     realizationImages: z.array(z.string()),
     realizationText: z.string(),
     realizationCost: z.number(),
-  })
+  }),
 });
 
 const certificatesCollection = defineCollection({
@@ -34,14 +34,14 @@ const certificatesCollection = defineCollection({
     certificateBrand: z.string(),
     certificateText: z.string(),
     certificateImageURL: z.string(),
-  })
+  }),
 });
 
 const airConditionerBrandsCollection = defineCollection({
   schema: z.object({
     brandName: z.string(),
     expanded: z.boolean(),
-  })
+  }),
 });
 
 const heatPumpCollection = defineCollection({
@@ -49,7 +49,7 @@ const heatPumpCollection = defineCollection({
     brandNameOfHeatPump: z.string(),
     content: z.string(),
     url: z.string(),
-  })
+  }),
 });
 
 const ventilationsCollection = defineCollection({
@@ -57,9 +57,8 @@ const ventilationsCollection = defineCollection({
     workType: z.string(),
     ventilationDescription: z.string(),
     ventilationImageList: z.array(z.string()),
-  })
+  }),
 });
-
 
 export const collections = {
   services: servicesCollection,
