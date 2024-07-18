@@ -3,7 +3,7 @@
 <ul class="image-list">
     <!-- Initial images will be rendered here by JavaScript -->
 </ul>
-<div id="overlay" class="overlay" onclick="handleOverlayClick()">
+<div id="overlay" class="overlay">
     <img id="overlay-image" class="overlay-image" src="" alt="Enlarged Image" />
 </div>
 <button class="see-more-button">See More</button>
@@ -27,6 +27,14 @@
         { heatPumpImageSrc: '/images/heat-pump-14.png' }
       ];
 
+      const overlay:HTMLDivElement | null = document.querySelector(".overlay");
+      overlay?.addEventListener("click", handleOverlayClick);
+
+      function handleOverlayClick() {
+        if (overlay) {
+          overlay.style.display = 'none';
+        }
+      }
       const imagesPerLoad = window.innerWidth > 2159 ? 8 : 6; // Check screen width
       let visibleImages = 0;
 
@@ -57,7 +65,6 @@
       }
 
       function handleImageClick(index: number) {
-        const overlay = document.getElementById('overlay');
         const overlayImage = document.getElementById('overlay-image') as HTMLImageElement;
         const image = document.querySelector(`img[data-index="${index}"]`) as HTMLImageElement;
 
@@ -69,19 +76,12 @@
         }
       }
 
-      function handleOverlayClick() {
-        const overlay = document.getElementById('overlay');
-        if (overlay) {
-          overlay.style.display = 'none';
-        }
-      }
 
       renderImages();
       const seeMoreButton = document.querySelector('.see-more-button');
       if (seeMoreButton) {
         seeMoreButton.addEventListener('click', renderImages);
       }
-      const overlay = document.getElementById('overlay');
       if (overlay) {
         overlay.addEventListener('click', handleOverlayClick);
       }
