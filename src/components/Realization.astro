@@ -13,15 +13,15 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
             </div>
             <button class="prev">❮</button>
             <button class="next">❯</button>
-        </div>  
+        </div>
         <p>{realizationText}</p>
-        <h3>Koszt: {realizationCost} PLN</h3>
+        <h3>Koszt netto już od: {realizationCost} PLN</h3>
     </section>
     <script>
         function setupSlider(slider: Element) {
             const prevButton = slider.querySelector<HTMLButtonElement>('.prev')!;
             const nextButton = slider.querySelector<HTMLButtonElement>('.next')!;
-            let currentIndex = 0;   
+            let currentIndex = 0;
             prevButton.disabled = currentIndex === 0;
             prevButton.addEventListener('click', function() {
                 if (currentIndex > 0) {
@@ -36,7 +36,7 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
                 }
             });
         }
-    
+
         function updateSlider(slider: Element, currentIndex: number) {
             const offset = -currentIndex * 100;
             const sliderElement = slider.querySelector<HTMLElement>('.slider');
@@ -86,7 +86,7 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
       cursor: pointer;
     }
     button:not(:disabled):hover, button:not(:disabled):active {
-        color: rgba(0, 0, 0, 0.721); 
+        color: rgba(0, 0, 0, 0.721);
         background-color: rgba(255, 255, 255, 0.671);
     }
     button:disabled {

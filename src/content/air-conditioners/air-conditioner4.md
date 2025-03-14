@@ -1,10 +1,13 @@
 ---
-modelName: 15315 Ekolojik Inverter Klima
-energy: 18000
-sound: 28
-airConditionerPrice: 2500
-klimaImage: /images/klima1.png
+modelName: Seria Terrel
+energy: 725
+minEnergy: 685
+maxEnergy: 2030
+minNoise: 54
+maxNoise: 64
+minPrice: 2946
+klimaImage: /images/sinclair-terrel.webp
 energyClass: A++
 brand: Sinclair
-linkToWebsite: https://translate.google.com/
+linkToWebsite: https://www.sinclair.pl/seria-biala-terrel.html
 ---

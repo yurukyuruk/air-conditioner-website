@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import {getCollection} from "astro:content";
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
@@ -9,35 +9,42 @@ const allAirConditionerBrands = await getCollection("air-conditioner-brands");
 ---
 
 <Layout title="Klimatyzacje">
-	<Header></Header>
-	<SubPageHeader subPageName="Klimatyzacje"/>
-	<section>
-		<ul>
-            {
-                 allAirConditionerBrands.map((allAirConditionerBrand, index) => (
-                    <GrouppedAirConditioners key={index} brandName={allAirConditionerBrand.data.brandName} expanded={allAirConditionerBrand.data.expanded}/>
-                ))
-              }
+    <Header></Header>
+    <SubPageHeader subPageName="Klimatyzacje"/>
+    <section>
+        <ul>
+            <li>
+                {
+                    allAirConditionerBrands.map((allAirConditionerBrand, index) => (
+                            <GrouppedAirConditioners key={index} brandName={allAirConditionerBrand.data.brandName}
+                                                     expanded={allAirConditionerBrand.data.expanded}
+                                                     moreProductsUrl={allAirConditionerBrand.data.moreProductsUrl}/>
+                    ))
+                }
+            </li>
         </ul>
-	</section>
-	<Footer></Footer>
+    </section>
+    <Footer></Footer>
 </Layout>
 
 <style>
-	section {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-	}
-	ul {
-		width: var(--width-for-mobile);
-		display: flex;
-		flex-direction: column;
-		padding: 0;
-	}
-	@media (min-width: 1024px) {
-    	ul {
-        	width: var(--width-for-desktop);
-    	}
-	}
+    section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    ul {
+        width: var(--width-for-mobile);
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    @media (min-width: 1024px) {
+        ul {
+            width: var(--width-for-desktop);
+        }
+    }
 </style>

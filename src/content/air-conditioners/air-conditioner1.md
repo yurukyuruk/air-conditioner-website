@@ -1,10 +1,12 @@
 ---
-modelName: 15325 Ekolojik Inverter Klima
-energy: 15000
-sound: 30
-airConditionerPrice: 2000
-klimaImage: /images/klima2.png
-energyClass: A+
+modelName: Seria Ray
+minEnergy: 685
+maxEnergy: 1912
+minNoise: 21
+maxNoise: 58
+minPrice: 2500
+klimaImage: /images/sinclair-ray.webp
+energyClass: A++
 brand: Sinclair
-linkToWebsite: https://translate.google.com/
+linkToWebsite: https://www.sinclair.pl/oferta/klimatyzatory-split/scienne-r32/seria-ray.html
 ---

@@ -4,9 +4,6 @@ realizationImages:
   - '/images/realization1a.png'
   - '/images/realization1b.png'
 realizationText:
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-  type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-  electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-  sheets containing i1960s with the release of Letraset sheets containing.
-realizationCost: 450
+  Instalacja klimatyzacyjna typu konsola to system, którego jednostka wewnętrzna przypomina grzejnik i montowana jest przy podłodze lub pod parapetem. Dzięki temu doskonale sprawdza się w pomieszczeniach z ograniczoną przestrzenią na ścianach, zapewniając efektywne chłodzenie i ogrzewanie. Konsola równomiernie rozprowadza powietrze, co zwiększa komfort użytkowania, a jej kompaktowy i estetyczny design łatwo wkomponowuje się w różne wnętrza. System ten jest energooszczędny, cichy i często wyposażony w nowoczesne funkcje, takie jak sterowanie zdalne czy programatory czasowe. Klimatyzacja typu konsola to idealne rozwiązanie dla mieszkań, biur czy lokali komercyjnych, łączące funkcjonalność z elegancją.
+realizationCost: 5500
 ---

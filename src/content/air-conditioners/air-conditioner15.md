@@ -1,10 +1,13 @@
 ---
-modelName: 14680 Ekolojik Inverter Klima
-energy: 14560
-sound: 48
-airConditionerPrice: 2280
-klimaImage: /images/klima1.png
+modelName: Seria Ray
+energy: 725
+minEnergy: 685
+maxEnergy: 1912
+minNoise: 21
+maxNoise: 58
+minPrice: 2500
+klimaImage: /images/sinclair-ray.webp
 energyClass: A+
 brand: Samsung
-linkToWebsite: https://translate.google.com/
+linkToWebsite: https://www.sinclair.pl/oferta/klimatyzatory-split/scienne-r32/seria-ray.html
 ---

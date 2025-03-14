@@ -11,9 +11,11 @@ const servicesCollection = defineCollection({
 const airConditionerCollection = defineCollection({
   schema: z.object({
     modelName: z.string(),
-    energy: z.number(),
-    sound: z.number(),
-    airConditionerPrice: z.number(),
+    minEnergy: z.number(),
+    maxEnergy: z.number(),
+    minNoise: z.number(),
+    maxNoise: z.number(),
+    minPrice: z.number(),
     klimaImage: z.string(),
     energyClass: z.string(),
     brand: z.string(),
@@ -41,6 +43,7 @@ const airConditionerBrandsCollection = defineCollection({
   schema: z.object({
     brandName: z.string(),
     expanded: z.boolean(),
+    moreProductsUrl: z.string(),
   }),
 });
 

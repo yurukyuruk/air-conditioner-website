@@ -1,13 +1,6 @@
 ---
-brandNameOfHeatPump: LG
+brandNameOfHeatPump: Atlantic
 content:
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt, lacus sit amet ullamcorper feugiat, neque
-  augue vulputate dui, vel condimentum justo nunc a ipsum. Suspendisse vel mauris convallis, elementum eros vitae,
-  placerat lectus. Ut quis eros pellentesque, venenatis est in, porta arcu. Phasellus quis velit lobortis, molestie orci
-  sit amet, egestas tellus. In eleifend erat sit amet urna tincidunt auctor. Donec venenatis mauris ac ante accumsan,
-  sit amet venenatis justo tristique. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-  curae; Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et
-  malesuada fames ac ante ipsum primis in faucibus. Nullam nec fringilla augue. Suspendisse tincidunt ex at lectus
-  vehicula, ac dictum erat scelerisque.
-url: https://www.lg.com/pl/klimatyzacja-pompy-ciepla
+  Pompy ciepła firmy Atlantica to nowoczesne urządzenia składające się z modułu wewnętrznego i zewnętrznego, zaprojektowane z myślą o efektywnym i cichym działaniu. Moduł wewnętrzny, montowany w budynku, zawiera zbiornik buforowy, naczynie wzbiorcze, pompę cyrkulacyjną, płytę główną oraz zbiornik ciepłej wody użytkowej (CWU). Zaawansowany programator panelu sterowania umożliwia zarządzanie wieloma obiegami grzewczymi i precyzyjne ustawienie parametrów pracy urządzenia. Moduł zewnętrzny, instalowany na zewnątrz, składa się z wentylatora, sprężarki, parownika, skraplacza oraz zaworu rozprężnego, a jego konstrukcja jest akustycznie i termicznie izolowana. Dzięki nowoczesnej automatyce sterującej VPAM oraz innowacyjnym rozwiązaniom technicznym moduł zewnętrzny zapewnia płynną pracę sprężarki i wyjątkowo niski poziom hałasu wynoszący około 30 dB, co czyni system Atlantica wydajnym, komfortowym i przyjaznym środowisku rozwiązaniem grzewczym.
+url: https://groupe-atlantic.pl/produkty/#energie_odnawialne
 ---

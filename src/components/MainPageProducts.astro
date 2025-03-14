@@ -4,17 +4,21 @@
 <section>
     <div class="wrapper">
         <a href="./klimatyzacje">
-            <img src="./images/pompa.png" alt="Klimatyzacje">
-            <h5>Klimaczja</h5>
+            <img src="./images/air-condition-icon.png" alt="Klimatyzacja ikona">
+            <h5>Klimatyzacja</h5>
         </a>
         <a href="./pompy-ciepla">
-            <img src="./images/pompa.png" alt="Pompy Ciepła">
+            <img src="./images/heat-pump-icon.png" alt="Pompy Ciepła ikona">
             <h5>Pompy Ciepła</h5>
         </a>
         <a href="./wentylacja">
-            <img src="./images/pompa.png" alt="Wentylacja">
+            <img src="./images/ventilation-icon.png" alt="Wentylacja ikona">
             <h5>Wentylacja</h5>
         </a>
+        <h1 style="color: red">Kompleksowa obsługa techniczna budynków</h1>
+        <p>Zapewniamy kompleksową obsługę techniczną budynków w zakresie klimatyzacji, wentylacji, ogrzewania (CO, CT)
+            oraz hydrauliki wodno-kanalizacyjnej. Oferujemy projektowanie, montaż, serwis i naprawy dostosowane do
+            każdego typu obiektu. Gwarantujemy niezawodność, profesjonalizm i szybkie wsparcie techniczne.</p>
     </div>
 </section>
 
@@ -26,12 +30,14 @@
         font-family: var(--root-font-family);
         margin-top: 40px;
     }
+
     .wrapper {
         width: var(--width-for-mobile);
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: wrap;
     }
+
     a {
         display: flex;
         flex-direction: column;
@@ -40,41 +46,42 @@
         margin-top: 40px;
         transition: box-shadow 0.3s ease-in-out;
     }
+
     a:hover, a:active {
         box-shadow: rgba(0, 0, 0, 0.438) 0px 2px 8px;
     }
+
     img {
         width: var(--width-for-mobile);
     }
+
     h5 {
         color: var(--black-text-color);
         font-size: var(--font-size-l);
         margin: 0;
         padding: 10px 0 10px 0;
     }
+
     @media (min-width: 720px) {
         section {
             margin-top: 80px;
         }
+
         a {
-            width: calc(100% / 3);
+            width: calc(80% / 3);
             margin-top: 0;
         }
+
         .wrapper {
             width: var(--width-for-mobile);
+            justify-content: space-between;
         }
     }
+
     @media (min-width: 1024px) {
-        a {
-            width: calc(96% / 3);
-        }
         .wrapper {
             width: var(--width-for-desktop);
         }
-        .wrapper {
-        display: flex;
-        justify-content: space-between;
-        }
     }
-    
+
 </style>

@@ -4,9 +4,6 @@ realizationImages:
   - '/images/realization1a.png'
   - '/images/realization1b.png'
 realizationText:
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-  type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-  electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-  sheets containing.
-realizationCost: 400
+  Klimatyzacja podstropowa to system, w którym jednostka wewnętrzna montowana jest bezpośrednio pod sufitem, co czyni ją idealnym rozwiązaniem dla pomieszczeń bez sufitów podwieszanych. Dzięki swojej konstrukcji zapewnia równomierne rozprowadzenie powietrza na dużej powierzchni, co sprawdza się w przestrzeniach takich jak sale konferencyjne, sklepy czy restauracje. Charakteryzuje się wysoką wydajnością i możliwością precyzyjnego sterowania temperaturą oraz nawiewem. Urządzenia podstropowe są ciche, estetyczne i często wyposażone w nowoczesne technologie, takie jak sterowanie zdalne lub programatory czasowe. To niezawodne i funkcjonalne rozwiązanie do klimatyzacji średnich i dużych pomieszczeń.
+realizationCost: 6000
 ---

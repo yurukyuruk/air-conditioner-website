@@ -1,54 +1,58 @@
 ---
-const { title } = Astro.props;
+const {title} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Klimatyzcje łódź..." />
-		<meta name="keaywords" content="klimatyzacja, wentylacja, pompy ciepła, łódź, warszawa, zgierz" />
-		<meta name="viewport" content="width=device-width" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<title>MS Instalbud - { title }</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description"
+          content="Profesjonalna instalacja klimatyzacji w Łodzi – zapewniamy montaż, serwis i konserwację urządzeń klimatyzacyjnych do domów i firm. Skontaktuj się z nami, by poprawić komfort i jakość powietrza w swoim otoczeniu!"/>
+    <meta name="keaywords" content="klimatyzacja, wentylacja, pompy ciepła, łódź, warszawa, zgierz"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
+    <link rel="canonical" href="https://ms-klima-lodz.pl/" />
+    <title>MS Instalbud - { title }</title>
+</head>
+<body>
+<slot/>
+</body>
 </html>
 <style is:global>
-	html {
-		font-size: 16px;
-	}
-	:root {
-		--width-for-desktop: 80%;
-		--width-for-mobile: 96%;
-		--full-width: 100%;
-		--seperator-border-color: rgb(225, 222, 222);
-		--main-background-color: white;
-		--white-text-color: white;
-		--white-background-color: white;
-		--light-gray-color: rgb(243, 243, 243);
-		--very-light-gray-color: rgb(249, 248, 248);
-		--black-text-color: black;
-		--root-font-family: Arial, Helvetica, sans-serif;
-		--font-size-xs: 0.6rem;
-		--font-size-s: 0.8rem;
-		--font-size-m: 1rem;
-		--font-size-l: 1.2rem;
-		--font-size-xl: 1.4rem;
-		--font-size-xxl: 2rem;
-		--light-font-weight: 100;
-		--main-blue-color: rgb(0, 107, 163);
-		--main-red-color: rgb(220, 5, 31);
-		--light-blue-color: rgba(0, 107, 163, 0.12)
-	}
-	body {
-		min-height: 100vh;
-		display: flex;
-		flex-direction: column;
-		margin: 0;
-		scroll-behavior: smooth;
-	}
+    html {
+        font-size: 16px;
+    }
+
+    :root {
+        --width-for-desktop: 80%;
+        --width-for-mobile: 96%;
+        --full-width: 100%;
+        --seperator-border-color: rgb(225, 222, 222);
+        --main-background-color: white;
+        --white-text-color: white;
+        --white-background-color: white;
+        --light-gray-color: rgb(243, 243, 243);
+        --very-light-gray-color: rgb(249, 248, 248);
+        --black-text-color: black;
+        --root-font-family: Arial, Helvetica, sans-serif;
+        --font-size-xs: 0.6rem;
+        --font-size-s: 0.8rem;
+        --font-size-m: 1rem;
+        --font-size-l: 1.2rem;
+        --font-size-xl: 1.4rem;
+        --font-size-xxl: 2rem;
+        --light-font-weight: 100;
+        --main-blue-color: rgb(0, 107, 163);
+        --main-red-color: rgb(220, 5, 31);
+        --light-blue-color: rgba(0, 107, 163, 0.12)
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        scroll-behavior: smooth;
+    }
 </style>

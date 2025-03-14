@@ -1,13 +1,6 @@
 ---
 title: Konserwacja Klimatyzatora
 description:
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt, lacus sit amet ullamcorper feugiat, neque
-  augue vulputate dui, vel condimentum justo nunc a ipsum. Suspendisse vel mauris convallis, elementum eros vitae,
-  placerat lectus. Ut quis eros pellentesque, venenatis est in, porta arcu. Phasellus quis velit lobortis, molestie orci
-  sit amet, egestas tellus. In eleifend erat sit amet urna tincidunt auctor. Donec venenatis mauris ac ante accumsan,
-  sit amet venenatis justo tristique. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-  curae; Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et
-  malesuada fames ac ante ipsum primis in faucibus. Nullam nec fringilla augue. Suspendisse tincidunt ex at lectus
-  vehicula, ac dictum erat scelerisque.
-price: 1500
+  Konserwacja klimatyzacji to kluczowa usługa, która zapewnia sprawne, bezpieczne i energooszczędne działanie systemów klimatyzacyjnych w budynkach. Regularne przeglądy oraz czyszczenie urządzeń pozwalają uniknąć awarii, przedłużają żywotność sprzętu i dbają o jakość powietrza, eliminując kurz, bakterie i pleśń. Nasz zespół specjalistów precyzyjnie kontroluje każdy element systemu – od filtrów, przez parowniki i skraplacze, aż po szczelność układu. Dzięki profesjonalnej konserwacji klimatyzacji nasi klienci mogą cieszyć się nieprzerwanym komfortem i zdrowym powietrzem, a także niższymi kosztami eksploatacji.
+price: 300
 ---

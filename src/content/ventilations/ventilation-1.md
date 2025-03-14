@@ -1,14 +1,7 @@
 ---
-workType: NAZYWA USLUGI 1
+workType: Czyszczenie wentylacji
 ventilationDescription:
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt, lacus sit amet ullamcorper feugiat, neque
-  augue vulputate dui, vel condimentum justo nunc a ipsum. Suspendisse vel mauris convallis, elementum eros vitae,
-  placerat lectus. Ut quis eros pellentesque, venenatis est in, porta arcu. Phasellus quis velit lobortis, molestie orci
-  sit amet, egestas tellus. In eleifend erat sit amet urna tincidunt auctor. Donec venenatis mauris ac ante accumsan,
-  sit amet venenatis justo tristique. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-  curae; Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et
-  malesuada fames ac ante ipsum primis in faucibus. Nullam nec fringilla augue. Suspendisse tincidunt ex at lectus
-  vehicula, ac dictum erat scelerisque.
+  Czyszczenie wentylacji mechanicznej jest istotnym elementem utrzymania prawidłowego działania systemu oraz zapewnienia zdrowego powietrza w pomieszczeniach. Z czasem w kanałach wentylacyjnych gromadzi się kurz, tłuszcz, pyły, pleśń i inne zanieczyszczenia, które mogą obniżać jakość powietrza oraz zwiększać ryzyko rozwoju drobnoustrojów. Proces czyszczenia zaczyna się od dokładnej oceny stanu instalacji przy użyciu kamer inspekcyjnych lub specjalistycznych urządzeń diagnostycznych. Następnie, przy użyciu szczotek mechanicznych, sprężonego powietrza lub odkurzaczy o wysokiej mocy, usuwane są zanieczyszczenia z kanałów. Dodatkowo, aby zapobiec rozwojowi bakterii i pleśni, często stosuje się środki dezynfekujące, które eliminują mikroorganizmy z powierzchni przewodów. Ważnym etapem jest również czyszczenie wymienników ciepła, filtrów i kratek wentylacyjnych, które mogą blokować przepływ powietrza, jeśli są zabrudzone. Regularne przeprowadzanie takich zabiegów pozwala na utrzymanie wysokiej sprawności systemu oraz obniżenie kosztów eksploatacji, ponieważ czysta wentylacja działa bardziej efektywnie. Czyszczenie powinno być wykonywane przez wykwalifikowanych specjalistów z odpowiednim sprzętem, aby uniknąć uszkodzenia instalacji. Częstotliwość konserwacji zależy od rodzaju systemu oraz warunków użytkowania, ale zazwyczaj zaleca się przeprowadzanie przeglądów co 1-2 lata. Dzięki temu wentylacja mechaniczna nie tylko poprawia komfort użytkowników, ale także minimalizuje ryzyko zdrowotne związane z zanieczyszczeniami powietrza.
 ventilationImageList:
   - '/images/ventilation-2.png'
   - '/images/ventilation-1.png'

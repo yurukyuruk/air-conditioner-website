@@ -4,8 +4,6 @@ realizationImages:
   - '/images/realization1a.png'
   - '/images/realization1b.png'
 realizationText:
-  It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-  unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
-  more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-realizationCost: 500
+  Klimatyzacja typu kaseta to system, w którym jednostka wewnętrzna montowana jest w suficie podwieszanym, co pozwala na oszczędność miejsca i estetyczny wygląd. Powietrze jest równomiernie rozprowadzane w czterech kierunkach, dzięki czemu zapewnia efektywne chłodzenie lub ogrzewanie nawet dużych pomieszczeń. Ten typ instalacji doskonale sprawdza się w biurach, sklepach, restauracjach i innych obiektach komercyjnych. Systemy kasetonowe są energooszczędne, ciche i często wyposażone w zaawansowane opcje sterowania, takie jak piloty czy integracja z systemami inteligentnego budynku. Dzięki niewidocznemu montażowi i wysokiej wydajności, klimatyzacja kasetonowa łączy funkcjonalność z elegancją.
+realizationCost: 6500
 ---

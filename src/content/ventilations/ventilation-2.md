@@ -1,14 +1,7 @@
 ---
-workType: NAZYWA USLUGI 2
+workType: Wymiana filtrów HEPA
 ventilationDescription:
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt, lacus sit amet ullamcorper feugiat, neque
-  augue vulputate dui, vel condimentum justo nunc a ipsum. Suspendisse vel mauris convallis, elementum eros vitae,
-  placerat lectus. Ut quis eros pellentesque, venenatis est in, porta arcu. Phasellus quis velit lobortis, molestie orci
-  sit amet, egestas tellus. In eleifend erat sit amet urna tincidunt auctor. Donec venenatis mauris ac ante accumsan,
-  sit amet venenatis justo tristique. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-  curae; Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et
-  malesuada fames ac ante ipsum primis in faucibus. Nullam nec fringilla augue. Suspendisse tincidunt ex at lectus
-  vehicula, ac dictum eratrisque.
+  Wymiana filtrów HEPA jest kluczowa dla zapewnienia skutecznego oczyszczania powietrza w systemach wentylacyjnych, klimatyzacyjnych oraz w oczyszczaczach powietrza. Filtry te zatrzymują drobne cząsteczki, takie jak pyłki, kurz, pleśń, bakterie czy wirusy, co poprawia jakość powietrza i wspiera zdrowie użytkowników. Z czasem filtry ulegają zanieczyszczeniu, co obniża ich efektywność i zwiększa opory przepływu powietrza, dlatego należy je regularnie wymieniać zgodnie z zaleceniami producenta, zazwyczaj co 6-12 miesięcy. Proces wymiany polega na usunięciu zużytego filtra, oczyszczeniu obudowy z nagromadzonego kurzu i zainstalowaniu nowego filtra zgodnie z instrukcją. Regularna wymiana filtrów HEPA nie tylko poprawia wydajność urządzeń, ale także redukuje ryzyko rozprzestrzeniania się alergenów i zanieczyszczeń w pomieszczeniach.
 ventilationImageList:
   - '/images/ventilation-1.png'
   - '/images/ventilation-2.png'

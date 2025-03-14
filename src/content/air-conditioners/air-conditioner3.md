@@ -1,10 +1,12 @@
 ---
-modelName: 15323 Ekolojik Inverter Klima
-energy: 13000
-sound: 25
-airConditionerPrice: 2060
-klimaImage: /images/klima2.png
-energyClass: A+
+modelName: Seria Keyon
+minEnergy: 690
+maxEnergy: 1770
+minNoise: 56
+maxNoise: 61
+minPrice: 2316
+klimaImage: /images/sinclair-keyon.webp
+energyClass: A++
 brand: Sinclair
-linkToWebsite: https://translate.google.com/
+linkToWebsite: https://www.sinclair.pl/seria-keyon.html
 ---

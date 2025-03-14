@@ -1,10 +1,12 @@
 ---
-modelName: 15326 Ekolojik Inverter Klima
-energy: 14000
-sound: 40
-airConditionerPrice: 2500
-klimaImage: /images/klima1.png
+modelName: Seria Sky
+minEnergy: 960
+maxEnergy: 2420
+minNoise: 20
+maxNoise: 46
+minPrice: 1998
+klimaImage: /images/sinclair-sky.webp
 energyClass: A++
 brand: Sinclair
-linkToWebsite: https://translate.google.com/
+linkToWebsite: https://www.sinclair.pl/seria-sky-c0d48.html
 ---

@@ -1,4 +1,0 @@
----
-brandName: Samsung
-expanded: false
----

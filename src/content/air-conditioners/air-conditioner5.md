@@ -1,10 +1,12 @@
 ---
-modelName: 15215 Ekolojik Inverter Klima
-energy: 19000
-sound: 32
-airConditionerPrice: 2700
-klimaImage: /images/klima2.png
-energyClass: A+
+modelName: Seria Marvin
+minEnergy: 670
+maxEnergy: 2030
+minNoise: 58
+maxNoise: 65
+minPrice: 3405
+klimaImage: /images/sinclair-marvin.webp
+energyClass: A+++
 brand: Sinclair
-linkToWebsite: https://translate.google.com/
+linkToWebsite: https://www.sinclair.pl/seria-biala-marvin.html
 ---

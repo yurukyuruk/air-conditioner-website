@@ -3,7 +3,7 @@ import {getCollection} from "astro:content";
 const allAirConditioners = await getCollection("air-conditioners");
 import AirConditioner from "../components/AirConditioner.astro";
 import Layout from '../layouts/Layout.astro';
-const {brandName, expanded} = Astro.props
+const {brandName, expanded, moreProductsUrl} = Astro.props
 ---
 
 <Layout title="AirConditionerGroup">
@@ -16,23 +16,27 @@ const {brandName, expanded} = Astro.props
             {allAirConditioners.map((airConditioner, index) => {
                 if (airConditioner.data.brand === brandName) {
                     return (
-                            <AirConditioner
-                                    key={index}
-                                    modelName={airConditioner.data.modelName}
-                                    energy={airConditioner.data.energy}
-                                    sound={airConditioner.data.sound}
-                                    airConditionerPrice={airConditioner.data.airConditionerPrice}
-                                    klimaImage={airConditioner.data.klimaImage}
-                                    energyClass={airConditioner.data.energyClass}
-                                    brand={airConditioner.data.brand}
-                                    linkToWebsite={airConditioner.data.linkToWebsite}
-                            />
+                            <li>
+                                <AirConditioner
+                                        key={index}
+                                        modelName={airConditioner.data.modelName}
+                                        minEnergy={airConditioner.data.minEnergy}
+                                        maxEnergy={airConditioner.data.maxEnergy}
+                                        minNoise={airConditioner.data.minNoise}
+                                        maxNoise={airConditioner.data.maxNoise}
+                                        minPrice={airConditioner.data.minPrice}
+                                        klimaImage={airConditioner.data.klimaImage}
+                                        energyClass={airConditioner.data.energyClass}
+                                        brand={airConditioner.data.brand}
+                                        linkToWebsite={airConditioner.data.linkToWebsite}
+                                />
+                            </li>
                     );
                 }
             })}
         </ul>
         <div>
-            <a href="https://www.google.com/?hl=tr" target="_blank">Zobacz więcej</a>
+            <a href={moreProductsUrl} target="_blank">Zobacz więcej</a>
         </div>
     </details>
 </Layout>
@@ -89,6 +93,7 @@ const {brandName, expanded} = Astro.props
         gap: 20px;
         justify-content: center;
         padding: 0;
+        list-style-type: none
     }
 
     details ul {

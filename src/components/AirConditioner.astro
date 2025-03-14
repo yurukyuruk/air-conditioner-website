@@ -1,13 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const { modelName, energy, sound, airConditionerPrice, klimaImage, energyClass, linkToWebsite } = Astro.props
+const { modelName, minEnergy, maxEnergy, minNoise, maxNoise, minPrice, klimaImage, energyClass, linkToWebsite } = Astro.props
 ---
 
 <Layout title="AirConditioner">
     <section>
         <a href={linkToWebsite} target="_blank">
             <div class="image-and-energy-class">
-                <img src = {klimaImage} alt = "klimatyzacja" class="air-conditionew-photo"></img>
+                <img src = {klimaImage} alt="klimatyzacja" class="air-conditionew-photo"></img>
                 <div class="energy-class">
                     <p>{energyClass}</p>
                     <div class="arrow"></div>
@@ -15,10 +15,10 @@ const { modelName, energy, sound, airConditionerPrice, klimaImage, energyClass, 
             </div>
             <h2>{modelName}</h2>
             <ul>
-                <li>Pobór energii :  {energy} Btu/h</li>
-                <li>Głośność:  {sound} dBA</li>
+                <li>Pobór energii :  {minEnergy} - {maxEnergy} W</li>
+                <li>Głośność:  {minNoise} - {maxNoise} dBA</li>
             </ul>
-            <h3>Już od: {airConditionerPrice} PLN</h3>
+            <h3>Już od: {minPrice} PLN</h3>
         </a>
     </section>
 </Layout>
@@ -62,11 +62,11 @@ const { modelName, energy, sound, airConditionerPrice, klimaImage, energyClass, 
         font-size: var(--font-size-m);
     }
     .arrow {
-        width: 0;  
-        height: 0;  
-        border-top: 12px solid transparent; 
-        border-bottom: 12px solid transparent; 
-        border-left: 12px solid var(--main-blue-color); 
+        width: 0;
+        height: 0;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        border-left: 12px solid var(--main-blue-color);
     }
     ul, h2, h3 {
         margin: 0;

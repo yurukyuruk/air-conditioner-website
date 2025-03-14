@@ -5,15 +5,21 @@ import SubPageHeader from '../components/SubPageHeader.astro';
 <section>
     <SubPageHeader subPageName="O Nas"/>
     <img src="/images/company.jpg" alt="Budynek firmy">
-    <p class="p-1">Aasfdkk svfdbf  svdsvdvvd safvdf sdvfdv edsgvf esdgv wsavfd sxvf
-        sgdvf esdv  sdb  esdngmj bfdbg dsb sdbfrgr rhth ngnfdnn fdb v. 
-        wsab edsbgnghfn sdhbv esdhbf esddgf wgs rfbggnh  dfbngn gnh esdb rfn dhbg   
-        gnbt.
-    </p>
-    <p class="p-2">
-        Sgdvf esdv  sdb  esdngmj bfdbg dsb sdbfrgr rhth ngnfdnn fdb v. wsab 
-        edsbgnghfn sdhbv esdhbf esddgf wgs rfbggnh  dfbngn gnh esdb rfn dhbg gnbt.
-    </p>
+    <section class="content-wrapper">
+        <p>
+            <strong>MS INSTALBUD</strong> to dynamicznie rozwijająca się firma, która od 2020 roku zapewnia kompleksowe
+            usługi w zakresie instalacji oraz serwisu klimatyzacji, pomp ciepła i wentylacji na terenie Łodzi i okolic.
+            Zlokalizowani przy ul. Biedronkowej 19/40, świadczymy nasze usługi zarówno klientom indywidualnym, jak i
+            biznesowym, oferując nowoczesne rozwiązania, które podnoszą komfort i efektywność energetyczną budynków.</p>
+        <p>Nasz zespół specjalistów wyróżnia się wysokimi kwalifikacjami oraz licznymi certyfikatami, co stanowi
+            gwarancję profesjonalizmu i jakości. Dzięki wieloletniemu doświadczeniu i regularnym szkoleniom jesteśmy w
+            stanie sprostać nawet najbardziej wymagającym projektom, zapewniając optymalne i energooszczędne instalacje.
+            W MS INSTALBUD kładziemy duży nacisk na indywidualne podejście do każdego klienta, oferując fachowe
+            doradztwo na każdym etapie realizacji – od projektu, przez montaż, aż po konserwację i serwis.</p>
+        <p>Wybierając MS INSTALBUD, inwestujesz w niezawodną jakość, bezpieczeństwo i komfort, które
+            przekładają się na realne oszczędności. Skontaktuj się z nami i przekonaj się, jak możemy pomóc Ci stworzyć
+            zdrowe i komfortowe środowisko pracy oraz życia!</p>
+    </section>
 </section>
 
 <style>
@@ -23,24 +29,25 @@ import SubPageHeader from '../components/SubPageHeader.astro';
         flex-direction: column;
         align-items: center;
     }
+
     img {
         width: 100%;
     }
+
     p {
         width: var(--width-for-mobile);
         font-size: var(--font-size-m);
         margin: 0;
-    }
-    .p-1 {
-        padding: 40px 0 18px 0;
-    }
-    .p-2 {
-        padding: 0 0 40px 0;
+        padding-top: 20px;
     }
 
-@media (min-width: 1024px) {
-    img, p{
-        width: var(--width-for-desktop);
+    .content-wrapper {
+        padding: 40px 0 18px 0;
     }
-}
+
+    @media (min-width: 1024px) {
+        img, p {
+            width: var(--width-for-desktop);
+        }
+    }
 </style>

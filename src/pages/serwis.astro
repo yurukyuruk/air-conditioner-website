@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import {getCollection} from "astro:content";
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
@@ -9,21 +9,24 @@ import Service from "../components/Service.astro";
 ---
 
 <Layout title="Serwis">
-	<Header></Header>
-	<SubPageHeader subPageName="Pompy Ciepła"/>
-	<ul>
-		{
-			 allServices.map((service, index) => (
-        		<Service key={index} title={service.data.title} price={service.data.price} description={service.data.description}/>
-    		))
-		  }
-	</ul>
-	<Footer></Footer>
+    <Header></Header>
+    <SubPageHeader subPageName="Pompy Ciepła"/>
+    <ul>
+        <li>
+            {
+                allServices.map((service, index) => (
+                        <Service key={index} title={service.data.title} price={service.data.price}
+                                 description={service.data.description}/>
+                ))
+            }
+        </li>
+    </ul>
+    <Footer></Footer>
 </Layout>
 
 <style>
-	ul {
-		padding: 0 0 16px 0;
-		margin: 0;
-	}
+    ul {
+        padding: 0 0 16px 0;
+        margin: 0;
+    }
 </style>

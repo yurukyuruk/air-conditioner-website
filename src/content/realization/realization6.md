@@ -3,10 +3,8 @@ realizationImages:
   - '/images/realization3.png'
   - '/images/realization1a.png'
   - '/images/realization1b.png'
+title: Kanałówka  
 realizationText:
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-  type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-  electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-  sheets containing i1960s with the release of Letraset sheets containing.
-realizationCost: 450
+  Klimatyzacja kanałowa to system, w którym powietrze rozprowadzane jest za pomocą ukrytej sieci kanałów wentylacyjnych, zapewniając równomierny komfort w wielu pomieszczeniach jednocześnie. Jednostka wewnętrzna montowana jest w przestrzeni technicznej, np. w suficie podwieszanym, co sprawia, że system jest niemal niewidoczny i nie ingeruje w estetykę wnętrz. Dzięki możliwości indywidualnego sterowania temperaturą w poszczególnych strefach, klimatyzacja kanałowa jest idealna dla domów, biur i obiektów komercyjnych. System ten cechuje się wysoką wydajnością, cichą pracą i opcją integracji z systemami wentylacji, co zwiększa jego funkcjonalność. To rozwiązanie łączące nowoczesną technologię z elegancją, gwarantując komfort oraz efektywne wykorzystanie przestrzeni.
+realizationCost: 6000
 ---

@@ -140,13 +140,6 @@ declare module 'astro:content' {
   collection: "air-conditioner-brands";
   data: InferEntrySchema<"air-conditioner-brands">
 } & { render(): Render[".md"] };
-"brand3.md": {
-	id: "brand3.md";
-  slug: "brand3";
-  body: string;
-  collection: "air-conditioner-brands";
-  data: InferEntrySchema<"air-conditioner-brands">
-} & { render(): Render[".md"] };
 };
 "air-conditioners": {
 "air-conditioner1.md": {
@@ -379,6 +372,13 @@ declare module 'astro:content' {
   collection: "realization";
   data: InferEntrySchema<"realization">
 } & { render(): Render[".md"] };
+"realization7.md": {
+	id: "realization7.md";
+  slug: "realization7";
+  body: string;
+  collection: "realization";
+  data: InferEntrySchema<"realization">
+} & { render(): Render[".md"] };
 };
 "services": {
 "service1.md": {
@@ -391,6 +391,13 @@ declare module 'astro:content' {
 "service2.md": {
 	id: "service2.md";
   slug: "service2";
+  body: string;
+  collection: "services";
+  data: InferEntrySchema<"services">
+} & { render(): Render[".md"] };
+"service3.md": {
+	id: "service3.md";
+  slug: "service3";
   body: string;
   collection: "services";
   data: InferEntrySchema<"services">
@@ -411,6 +418,13 @@ declare module 'astro:content' {
   collection: "ventilations";
   data: InferEntrySchema<"ventilations">
 } & { render(): Render[".md"] };
+"ventilation-3.md": {
+	id: "ventilation-3.md";
+  slug: "ventilation-3";
+  body: string;
+  collection: "ventilations";
+  data: InferEntrySchema<"ventilations">
+} & { render(): Render[".md"] };
 };
 
 	};
@@ -421,5 +435,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("./../src/content/config.js");
+	export type ContentConfig = typeof import("../src/content/config.js");
 }
