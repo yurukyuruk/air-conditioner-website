@@ -6,15 +6,15 @@ import DesktopHeader from "./DesktopHeader.astro";
 <DesktopHeader class="header"></DesktopHeader>
 <style>
     .header-hidden {
-        top: -74px; 
+        top: -74px;
     }
 </style>
 
 <script>
     let lastScrollTop = 0;
     let header = document.querySelectorAll(".header")
-    window.addEventListener("scroll", function() {
-        if(header === null) {
+    window.addEventListener("scroll", function () {
+        if (header === null) {
             header = document.querySelectorAll(".header")
         }
         const currentScroll = window.scrollY || document.documentElement.scrollTop;
@@ -30,11 +30,13 @@ import DesktopHeader from "./DesktopHeader.astro";
 
     // Get all subpage links
     const links = document.querySelectorAll(".header nav ul li a");
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log('DUPA')
         const currentPage = window.location.pathname; // Get current page pathname
         // Loop through links
-        links.forEach(function(link) {
-            if (link.getAttribute("href") === currentPage) {
+        links.forEach(function (link) {
+            const aHref = link.getAttribute("href");
+            if (aHref && currentPage.includes(aHref)) {
                 link.classList.add("active"); // Add active class to current page link
             }
         });
