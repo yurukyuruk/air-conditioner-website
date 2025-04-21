@@ -20,13 +20,41 @@ const allCertificates = await getCollection("certificates");
                         certificateBrand={certificate.data.certificateBrand}
                         certificateText={certificate.data.certificateText}
                         certificateImageURL={certificate.data.certificateImageURL}
+                        certificateImageIndex={certificate.data.certificateImageIndex}
+                        
                     />
                 ))
             }
         </ul>
+        <div id="overlay" class="overlay">
+            <img id="overlay-image" class="overlay-image" src="" alt="Enlarged Image" />
+        </div>
     </section>
 	<Footer/>
 </Layout>
+
+<script>
+ const overlay:HTMLDivElement | null = document.querySelector(".overlay");
+      overlay?.addEventListener("click", handleOverlayClick);
+
+      function handleOverlayClick() {
+        if (overlay) {
+          overlay.style.display = 'none';
+        }
+      }
+      
+      function handleImageClick(index: number) {
+        const overlayImage = document.getElementById('overlay-image') as HTMLImageElement;
+        const image = document.querySelector(`img[data-index="${index}"]`) as HTMLImageElement;
+
+        if (overlayImage && image) {
+          overlayImage.src = image.src;
+        }
+        if (overlay) {
+          overlay.style.display = 'flex';
+        }
+      }
+</script>
 
 <style>
     section {
@@ -42,7 +70,25 @@ const allCertificates = await getCollection("certificates");
 		justify-content: center;
 		padding: 10px;
 		margin: 20px 0 20px 0;
+    max-width: 1200px;
 	}
+    .overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.overlay-image {
+  max-width: 90%;
+  max-height: 90%;
+}
     @media (min-width: 1024px) {
     	ul {
         	width: var(--width-for-desktop);
