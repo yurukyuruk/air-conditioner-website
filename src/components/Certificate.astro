@@ -1,16 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-const { certificateBrand, certificateText, certificateImageURL} = Astro.props
+const { certificateBrand, certificateText, certificateImageURL, certificateImageIndex} = Astro.props
 ---
-<Layout title="Certificates">
     <section>
         <h2>{certificateBrand}</h2>
         <p>{certificateText}</p>
-        <img class="small-image" alt="certyfikat" src={certificateImageURL}>
+        <img class="small-image" alt="certyfikat" src={certificateImageURL} data-index={certificateImageIndex} onclick="handleImageClick({certificateImageIndex})">
     </section>
-</Layout>
 
 <script>
+
+   
 </script>
 
 <style>
