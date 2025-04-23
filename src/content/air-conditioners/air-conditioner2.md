@@ -8,5 +8,5 @@ minPrice: 1998
 klimaImage: /images/sinclair-sky.webp
 energyClass: A++
 brand: Sinclair
-linkToWebsite: https://www.sinclair.pl/seria-sky-c0d48.html
+linkToWebsite: https://www.sinclair.pl/seria-biala-sky.html
 ---

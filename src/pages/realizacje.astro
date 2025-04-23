@@ -15,7 +15,7 @@ import Realization from "../components/Realization.astro";
 		<ul>
 			{
 				 allRealizations.map((realization, index) => (
-					<Realization key={index} realizationImages={realization.data.realizationImages} realizationText={realization.data.realizationText} realizationCost={realization.data.realizationCost}/>
+					<Realization key={index} realizationImages={realization.data.realizationImages} realizationHeading={realization.data.realizationHeading} realizationText={realization.data.realizationText} realizationCost={realization.data.realizationCost}/>
 				))
 			  }
 		</ul>

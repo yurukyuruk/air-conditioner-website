@@ -2,23 +2,21 @@
 ---
 
 <section>
-    <div class="wrapper">
-        <a href="./klimatyzacje">
-            <img src="./images/air-condition-icon.png" alt="Klimatyzacja ikona">
-            <h5>Klimatyzacja</h5>
-        </a>
-        <a href="./pompy-ciepla">
-            <img src="./images/heat-pump-icon.png" alt="Pompy Ciepła ikona">
-            <h5>Pompy Ciepła</h5>
-        </a>
-        <a href="./wentylacja">
-            <img src="./images/ventilation-icon.png" alt="Wentylacja ikona">
-            <h5>Wentylacja</h5>
-        </a>
-        <h1 style="color: red">Kompleksowa obsługa techniczna budynków</h1>
-        <p>Zapewniamy kompleksową obsługę techniczną budynków w zakresie klimatyzacji, wentylacji, ogrzewania (CO, CT)
-            oraz hydrauliki wodno-kanalizacyjnej. Oferujemy projektowanie, montaż, serwis i naprawy dostosowane do
-            każdego typu obiektu. Gwarantujemy niezawodność, profesjonalizm i szybkie wsparcie techniczne.</p>
+    <div class="wrapper-wrapper">
+        <div class="wrapper">
+            <a href="./klimatyzacje">
+                <img class="air-conditioner-icon" src="./images/air-condition-icon.png" alt="Klimatyzacja ikona">
+                <h5>Klimatyzacja</h5>
+            </a>
+            <a href="./pompy-ciepla">
+                <img class="heat-pomp-icon" src="./images/heat-pump-icon.png" alt="Pompy Ciepła ikona">
+                <h5>Pompy Ciepła</h5>
+            </a>
+            <a href="./wentylacja">
+                <img src="./images/ventilation-icon.png" alt="Wentylacja ikona">
+                <h5>Wentylacja</h5>
+            </a>
+        </div>
     </div>
 </section>
 
@@ -30,29 +28,41 @@
         font-family: var(--root-font-family);
         margin-top: 40px;
     }
-
+    .wrapper-wrapper {
+        width: 100vw;
+        background-color: var(--light-gray-color);
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
     .wrapper {
-        width: var(--width-for-mobile);
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        flex-direction: column;
     }
-
     a {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
         text-decoration: none;
         margin-top: 40px;
-        transition: box-shadow 0.3s ease-in-out;
+        transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: white;
+        border-radius: 20px;
+        width: 320px;
     }
 
     a:hover, a:active {
-        box-shadow: rgba(0, 0, 0, 0.438) 0px 2px 8px;
+        transform: scale(1.04);
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
     }
-
     img {
-        width: var(--width-for-mobile);
+        width: 240px;
     }
 
     h5 {
@@ -63,6 +73,9 @@
     }
 
     @media (min-width: 720px) {
+        .wrapper-wrapper {
+            padding-bottom: 40px;
+        }
         section {
             margin-top: 80px;
         }
@@ -71,11 +84,23 @@
             width: calc(80% / 3);
             margin-top: 0;
         }
-
+        img {
+        width: 120px;
+        }
         .wrapper {
             width: var(--width-for-mobile);
             justify-content: space-between;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            flex-direction: row;
         }
+        .heat-pomp-icon {
+            margin-top: 24px;
+        }
+        .air-conditioner-icon {
+            margin-top: 50px;
+        }
+
     }
 
     @media (min-width: 1024px) {

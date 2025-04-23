@@ -1,5 +1,5 @@
 ---
-modelName: Seria Marvin
+modelName: Seria Srebrna Marvin
 minEnergy: 670
 maxEnergy: 2030
 minNoise: 58
@@ -8,5 +8,5 @@ minPrice: 3405
 klimaImage: /images/sinclair-marvin.webp
 energyClass: A+++
 brand: Sinclair
-linkToWebsite: https://www.sinclair.pl/seria-biala-marvin.html
+linkToWebsite: https://www.sinclair.pl/seria-srebrna-marvin.html
 ---

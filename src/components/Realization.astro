@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const { realizationImages, realizationText, realizationCost } = Astro.props;
+const { realizationImages, realizationHeading, realizationText, realizationCost } = Astro.props;
 ---
 
 <Layout title="Realization">
@@ -14,8 +14,9 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
             <button class="prev">❮</button>
             <button class="next">❯</button>
         </div>
+        <h2>{realizationHeading}</h2>
         <p>{realizationText}</p>
-        <h3>Koszt netto już od: {realizationCost} PLN</h3>
+        <h3>Koszt netto już od: <span>{realizationCost} PLN</span></h3>
     </section>
     <script>
         function setupSlider(slider: Element) {
@@ -65,6 +66,7 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
       position: relative; /* Adjust width as needed */
       overflow: hidden;
       width: 340px;
+      height: 300px;
       margin: -20px -20px 0 -20px;
     }
     .slider {
@@ -73,7 +75,8 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
     }
     .slider img {
       width: 100%;
-      height: auto;
+      height: 300px;
+      object-fit: cover;
     }
     button {
       position: absolute;
@@ -108,14 +111,22 @@ const { realizationImages, realizationText, realizationCost } = Astro.props;
         display: flex;
         flex-direction: column;
     }
-    h3, p {
+    h2, h3, p {
         margin: 0;
         font-size: var(--font-size-m);
+    }
+    h2 {
+        padding-top: 20px;
     }
     p {
         padding: 20px 0 20px 0;
     }
     h3 {
         margin-top: auto;
+        color: var(--main-blue-color);
+    }
+    h3 span {
+        font-weight: 500;
+        color: var(--black-text-color);
     }
 </style>

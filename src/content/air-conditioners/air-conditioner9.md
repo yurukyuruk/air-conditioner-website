@@ -1,13 +1,12 @@
 ---
-modelName: Seria Ray
-energy: 725
-minEnergy: 685
-maxEnergy: 1912
-minNoise: 21
-maxNoise: 58
-minPrice: 2500
-klimaImage: /images/sinclair-ray.webp
-energyClass: A+
-brand: LG
-linkToWebsite: https://www.sinclair.pl/oferta/klimatyzatory-split/scienne-r32/seria-ray.html
+modelName: Versu Pure X
+minEnergy: 550
+maxEnergy: 1850
+minNoise: 58
+maxNoise: 64
+minPrice: 5498
+klimaImage: /images/Versu-Pure-X.webp
+energyClass: A+++
+brand: Rotenso
+linkToWebsite: https://rotenso.com/pl/produkt/versu-pure/
 ---

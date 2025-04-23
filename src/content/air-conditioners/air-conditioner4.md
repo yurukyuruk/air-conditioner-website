@@ -1,6 +1,5 @@
 ---
 modelName: Seria Terrel
-energy: 725
 minEnergy: 685
 maxEnergy: 2030
 minNoise: 54

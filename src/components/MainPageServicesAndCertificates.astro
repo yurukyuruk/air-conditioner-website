@@ -1,50 +1,51 @@
 ---
 ---
 <section class="main-wrapper">
-    <section class="services-and-certificates">
+    <section class="about-us-and-services">
+        <section class="about-us">
+            <div class="wrapper">
+                <img src="./images/about-us-icon.webp" alt="Symbol jakości i zaufania">
+                <div class="description">
+                    <h2>Poznaj Naszą Firmę</h2>
+                    <p>MS INSTALBUD to dynamiczna firma z Łodzi, oferująca kompleksowe usługi instalacyjne od 2020 roku. 
+                        Specjalizujemy się w klimatyzacji, wentylacji i pompach ciepła dla domów i firm. Nasz zespół to 
+                        doświadczeni specjaliści z certyfikatami i pasją do nowoczesnych rozwiązań. Stawiamy na jakość, 
+                        bezpieczeństwo i indywidualne podejście do każdego klienta.
+                    </p>
+                    <a href="./o-nas">Dowiedz się o nas</a>
+                </div>
+            </div>
+        </section>
         <section class="services">
             <div class="wrapper">
-                <img src="./images/realization-icon.png" alt="Ikona oznacza pracę dobrej jakości">
+                <img src="./images/service-icon.webp" alt="Ikona obsługi technicznej i serwisu">
                 <div class="description">
-                    <h2>Najwyższa Jakość Usług</h2>
-                    <p>Kompleksowa obsługa, niezawodny serwis i profesjonalne doradztwo dla domów i firm. Postaw na
-                        komfort i solidność!.
+                    <h2>Kompleksowa Obsługa Techniczna</h2>
+                    <p>Zapewniamy kompleksową obsługę techniczną budynków w zakresie klimatyzacji, wentylacji, ogrzewania 
+                        (CO, CT) oraz hydrauliki wodno-kanalizacyjnej. Oferujemy projektowanie, montaż, serwis i naprawy 
+                        dostosowane do każdego typu obiektu. Gwarantujemy niezawodność, profesjonalizm i szybkie wsparcie 
+                        techniczne.
                     </p>
+                    <a href="./serwis">Kompleksowa obsługa techniczna budynków</a>
                 </div>
             </div>
-            <a href="./serwis">Zobacz nasze usługi</a>
-        </section>
-        <section class="certificates">
-            <div class="wrapper">
-                <img src="./images/certificates-icon.png" alt="Ikona reprezentuje pracę zawodową">
-                <div class="description">
-                    <h2>Profesjonalna Obsługa</h2>
-                    <p>Nasi pracownicy posiadają certyfikaty potwierdzające najwyższe kwalifikacje w zakresie montażu i
-                        serwisu klimatyzacji. Regularne szkolenia i aktualne uprawnienia gwarantują profesjonalizm oraz
-                        zgodność z najnowszymi standardami branżowymi.
-                    </p>
-                </div>
-            </div>
-            <a href="./certifikaty">Zobacz certyfikaty</a>
         </section>
     </section>
 </section>
 
 <style>
     .main-wrapper {
-        display: flex;
-        justify-content: center;
-        margin-top: 80px;
+        margin-top: 40px;
     }
 
-    .services-and-certificates {
+    .about-us-and-services {
         display: flex;
         justify-content: center;
         width: 100%;
         flex-wrap: wrap;
     }
 
-    .services, .certificates {
+    .about-us, .services {
         width: var(--width-for-mobile);
         display: flex;
         flex-direction: column;
@@ -52,18 +53,19 @@
         font-family: var(--root-font-family);
     }
 
-    .certificates {
+    .services {
         margin-top: 60px;
     }
 
     .wrapper {
         display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .description {
         display: flex;
         flex-direction: column;
-        padding-left: 20px;
     }
 
     h2 {
@@ -83,48 +85,63 @@
         background-color: var(--main-background-color);
         text-decoration: none;
         font-size: var(--font-size-l);
-        width: 220px;
+        width: 100%;
         border: 2px var(--main-blue-color) solid;
         padding: 10px 0 10px 0;
         margin-bottom: 20px;
         text-align: center;
         border-radius: 20px;
-        box-shadow: rgba(0, 0, 0, 0.438) 0px 2px 8px;
-        transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+        transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
         align-self: flex-end;
         margin: 0;
     }
 
     a:hover, a:active {
-        transform: scale(1.1);
         background-color: var(--main-blue-color);
+        color: var(--white-text-color);
     }
 
-    img {
-        width: 150px;
-        height: 150px;
-    }
-
-    @media (max-width: 380px) {
-        img {
-            width: 100px;
-            height: 100px;
+    .about-us .wrapper img, .services .wrapper img {
+            width: 140px;
+            height: 140px;
+            padding-bottom: 20px;
         }
-    }
-
     @media (min-width: 1024px) {
-        .services-and-certificates {
+        .main-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 120px 0 40px 0;
+        }
+        .wrapper {
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .about-us-and-services {
             width: var(--width-for-desktop);
             flex-wrap: nowrap;
         }
 
-        .services {
+        .about-us {
             padding-right: 20px;
         }
 
-        .certificates {
+        .services {
             padding-left: 20px;
             margin-top: 0;
+        }
+        .about-us .wrapper img {
+            width: 100px;
+            height: 100px;
+            padding-bottom: 0;
+         }
+        .services .wrapper img {
+            width: 95px;
+            height: 95px;
+            padding-bottom: 0;
+        }
+        .description {
+            padding-left: 20px;
         }
     }
 </style>
