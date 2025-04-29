@@ -1,10 +1,10 @@
 ---
 modelName: Seria Terrel
-minEnergy: 685
+minEnergy: 695
 maxEnergy: 2030
-minNoise: 54
-maxNoise: 64
-minPrice: 2946
+minNoise: 25
+maxNoise: 48
+minPrice: 3122
 klimaImage: /images/sinclair-terrel.webp
 energyClass: A++
 brand: Sinclair

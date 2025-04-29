@@ -1,9 +1,9 @@
 ---
 modelName: Teta X Multi
-minEnergy: 550
-maxEnergy: 1850
-minNoise: 58
-maxNoise: 64
+minEnergy: 250
+maxEnergy: 3500
+minNoise: 19
+maxNoise: 40
 minPrice: 5498
 klimaImage: /images/Teta-X-Multi.webp
 energyClass: A+++

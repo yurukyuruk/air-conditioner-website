@@ -1,10 +1,10 @@
 ---
 modelName: Seria Ray
-minEnergy: 685
-maxEnergy: 1912
-minNoise: 21
-maxNoise: 58
-minPrice: 2500
+minEnergy: 990
+maxEnergy: 1827
+minNoise: 23
+maxNoise: 48
+minPrice: 2800
 klimaImage: /images/sinclair-ray.webp
 energyClass: A++
 brand: Sinclair

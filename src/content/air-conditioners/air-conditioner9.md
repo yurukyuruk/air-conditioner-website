@@ -2,8 +2,8 @@
 modelName: Versu Pure X
 minEnergy: 550
 maxEnergy: 1850
-minNoise: 58
-maxNoise: 64
+minNoise: 53
+maxNoise: 63
 minPrice: 5498
 klimaImage: /images/Versu-Pure-X.webp
 energyClass: A+++

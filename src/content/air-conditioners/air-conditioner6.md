@@ -2,9 +2,9 @@
 modelName: Seria Spectrum Plus
 minEnergy: 550
 maxEnergy: 1850
-minNoise: 58
-maxNoise: 64
-minPrice: 5498
+minNoise: 18
+maxNoise: 50
+minPrice: 5828
 klimaImage: /images/sinclair-spectrum.webp
 energyClass: A+++
 brand: Sinclair
