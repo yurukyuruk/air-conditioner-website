@@ -1,8 +1,8 @@
 ---
 realizationImages:
-  - '/images/realization2.png'
-  - '/images/realization1a.png'
-  - '/images/realization1b.png'
+  - '/images/realization4.webp'
+  - '/images/realization5.webp'
+  - '/images/realization6.webp'
 realizationHeading: Klimatyzacja Multi-Split
 realizationText:
   Instalacje typu multi-split to systemy klimatyzacyjne, w których jedna jednostka zewnętrzna obsługuje wiele jednostek
